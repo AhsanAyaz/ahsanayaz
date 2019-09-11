@@ -30,25 +30,25 @@ The discriminant is a _singleton_ type property which is common in each of the e
 See the example below:
 
 ```typescript
-    enum CarTransmission {
-      Automatic = 200,
-      Manual = 300
-    }
+enum CarTransmission {
+  Automatic = 200,
+  Manual = 300
+}
 
-    interface IMotorcycle {
-      vType: "motorcycle"; // discriminant
-      make: number; // year
-    }
+interface IMotorcycle {
+  vType: "motorcycle"; // discriminant
+  make: number; // year
+}
 
-    interface ICar {
-      vType: "car"; // discriminant
-      transmission: CarTransmission
-    }
+interface ICar {
+  vType: "car"; // discriminant
+  transmission: CarTransmission
+}
 
-    interface ITruck {
-      vType: "truck"; // discriminant
-      capacity: number; // in tons
-    }
+interface ITruck {
+  vType: "truck"; // discriminant
+  capacity: number; // in tons
+}
 ```
 
 
@@ -59,7 +59,7 @@ You can see that the `vType` property in the interfaces is the `discriminant` or
 The union of the interfaces can be simply created as follows:
 
 ```typescript
-  type Vehicle = IMotorcycle | ICar | ITruck;
+type Vehicle = IMotorcycle | ICar | ITruck;
 ```
 
 We can now use this union (type) in our code where we can have more than one kind of vehicles expected in a variable.
@@ -69,14 +69,14 @@ We can now use this union (type) in our code where we can have more than one kin
 Consider the following example based on the interfaces we defined above:
 
 ```typescript
-  const evaluationFactor = Math.PI; // some global factor
-  
-  function evaluatePrice(vehicle: Vehicle) {
-    return vehicle.capacity * evaluationFactor;
-  }
+const evaluationFactor = Math.PI; // some global factor
 
-  const myTruck: ITruck = {vType: "truck", capacity: 9.5};
-  evaluatePrice(myTruck);
+function evaluatePrice(vehicle: Vehicle) {
+  return vehicle.capacity * evaluationFactor;
+}
+
+const myTruck: ITruck = {vType: "truck", capacity: 9.5};
+evaluatePrice(myTruck);
 ```
 
 
