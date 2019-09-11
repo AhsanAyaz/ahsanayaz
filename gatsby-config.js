@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `ahsan.dev`,
     author: `Muhammad Ahsan Ayaz`,
-    description: `This is a personal blog of Muhammad Ahsan Ayaz. Ahsan Ayaz is a Google Developers Expert in Angular and Web Technologies.`,
+    description: `This is a place where Muhammad Ahsan Ayaz shares code and examples. Ahsan Ayaz is a Google Developers Expert in Angular and Web Technologies.`,
     siteUrl: `https://ahsanayaz.com/`,
     social: {
       twitter: `ahsan_ayz`,
@@ -82,7 +82,7 @@ module.exports = {
         short_name: `ahsan.dev`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#007acc`,
         display: `minimal-ui`,
         icon: `content/assets/site_icon.png`,
       },
@@ -96,6 +96,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-zopfli`,
-    `gatsby-plugin-advanced-sitemap`
+    `gatsby-plugin-advanced-sitemap`,
   ],
 }
