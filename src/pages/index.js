@@ -23,7 +23,6 @@ class BlogIndex extends React.Component {
           if (post.frontmatter.featuredImage) {
             featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
           }
-          console.log(featuredImgFluid);
           return (
             <article key={post.fields.slug}>
               <header>

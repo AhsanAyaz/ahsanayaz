@@ -1,8 +1,9 @@
 ---
 title: Understanding Discriminated Unions in Typescript
 date: 2019-09-06 14:30:36
+author: Muhammad Ahsan Ayaz
 featuredImage: ../../assets/discriminated_unions.jpg
-description: This article explains how to use discriminated unions in typescript.
+description: This article explains what are Discriminated Unions in Typescript and how we can use them.
 tags:
   - angular
   - typescript

@@ -15,10 +15,10 @@ class BlogPostTemplate extends React.Component {
       featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
     }
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const { previous, next, slug } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout slug={slug} location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
