@@ -5,10 +5,15 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import Img from "gatsby-image"
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
+    let featuredImgFluid = null
+    if (post.frontmatter.featuredImage) {
+      featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
+    }
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
@@ -23,11 +28,14 @@ class BlogPostTemplate extends React.Component {
             <h1
               style={{
                 marginTop: rhythm(1),
-                marginBottom: 0,
+                marginBottom: rhythm(1),
               }}
             >
               {post.frontmatter.title}
             </h1>
+            <div>
+              {featuredImgFluid ? <Img fluid={featuredImgFluid} /> : null}
+            </div>
             <p
               style={{
                 ...scale(-1 / 5),
@@ -98,6 +106,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
       }
     }
   }

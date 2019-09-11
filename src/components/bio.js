@@ -14,9 +14,9 @@ import { rhythm } from "../utils/typography"
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/profile_pic.png/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 100, height: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -26,6 +26,8 @@ const Bio = () => {
           author
           social {
             twitter
+            github
+            linkedin
           }
         }
       }
@@ -53,14 +55,30 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
+      <div
+        style={{
+          flex: 1,
+        }}>
+        Personal blog of <strong>{author}</strong>.
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
+        <div>
+          <a href={`https://google-developers.appspot.com/community/experts/directory/profile/profile-ahsan_ayaz`}>Google Developers Expert</a> in Angular & Web Technologies.
+          {` `}
+          <i>
+            <p>
+              <a href={`https://twitter.com/${social.twitter}`}>
+                Twitter
+              </a>, {` `}
+              <a href={`https://twitter.com/${social.twitter}`}>
+                Github
+              </a>, {` `}
+              <a href={`https://linkedin.com/${social.linkedin}`}>
+                LinkedIn
+              </a>
+            </p>
+          </i>
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,11 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `ahsan.dev`,
+    author: `Muhammad Ahsan Ayaz`,
+    description: `This is a personal blog of Muhammad Ahsan Ayaz. Ahsan Ayaz is a Google Developers Expert in Angular and Web Technologies.`,
+    siteUrl: `https://ahsanayaz.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `ahsan_ayz`,
+      github: `ahsanayaz`,
+      linkedin: `in/ahsanayaz`
     },
   },
   plugins: [
@@ -21,6 +23,12 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
       },
     },
     {
@@ -57,8 +65,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `ahsan.dev`,
+        short_name: `ahsan.dev`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
@@ -74,5 +82,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-zopfli`,
+    `gatsby-plugin-advanced-sitemap`
   ],
 }
