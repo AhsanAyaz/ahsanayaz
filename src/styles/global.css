@@ -1,0 +1,34 @@
+.vscode-highlight {
+  --vscode-highlight-line-highlighted-background-color: rgba(255, 255, 255, 0.2); /* default: transparent */
+  --vscode-highlight-line-highlighted-border-color: rgba(255, 255, 255, 0.5); /* default: transparent */
+  --vscode-highlight-line-highlighted-border-width: 2px; /* default: 2px */
+}
+
+:not(pre)>code {
+  position: relative;
+  padding: .2em;
+  border-radius: .3em;
+  color: #c92c2c;
+  border: 1px solid rgba(0,0,0,.1);
+  display: inline;
+  white-space: normal;
+  background-color: #fdfdfd;
+  box-sizing: border-box;
+  max-height: inherit;
+}
+
+code {
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}

@@ -127,7 +127,7 @@ type Vehicle = IMotorcycle | ICar | ITruck | IBicycle;
 
 We'll be able to use `never` for the exhaustiveness check as follows:
 
-```typescript
+```typescript{9-11}
 function evaluatePrice(vehicle: Vehicle) {
   switch(vehicle.vType) {
     case "car":
@@ -151,7 +151,7 @@ Type 'IBicycle' is not assignable to type 'never'.
 
 The above shows we need to handle `IBicycle` as well. Once we add the `case` for `IBicycle` in the `evaluatePrice` method as below, the error should go away.
 
-```typescript
+```typescript{9,10}
 function evaluatePrice(vehicle: Vehicle) {
   switch(vehicle.vType) {
     case "car":
