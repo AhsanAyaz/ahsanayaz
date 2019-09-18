@@ -6,6 +6,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import Img from "gatsby-image"
+import { ShareBlockStandard } from "react-custom-share";
+import {HOME_SHARE_BUTTONS_CONTENT} from '../constants/home-share-buttons';
 
 class BlogIndex extends React.Component {
   render() {
@@ -54,6 +56,7 @@ class BlogIndex extends React.Component {
             </article>
           )
         })}
+        <ShareBlockStandard {...HOME_SHARE_BUTTONS_CONTENT} />
       </Layout>
     )
   }
