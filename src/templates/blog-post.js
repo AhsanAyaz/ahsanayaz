@@ -8,7 +8,7 @@ import { rhythm, scale } from "../utils/typography"
 import Img from "gatsby-image"
 import { ShareBlockStandard } from "react-custom-share"
 import {BLOG_SHARE_BUTTONS_CONTENT} from '../constants/blog-share-buttons-content'
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import { Disqus } from 'gatsby-plugin-disqus'
 import {DISQUS_CONFIG} from '../constants/disqus-config';
 
 class BlogPostTemplate extends React.Component {
@@ -73,7 +73,6 @@ class BlogPostTemplate extends React.Component {
               marginBottom: rhythm(1),
             }}
           />
-          {/* <CommentCount config={disqusConfig} placeholder={''} /> */}
           {/* Post contents */}
           <footer>
             <Disqus config={disqusConfig} />

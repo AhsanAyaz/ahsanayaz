@@ -115,9 +115,15 @@ module.exports = {
         theme_color: `#007acc`,
         display: `minimal-ui`,
         icon: `content/assets/site_icon.png`,
+        gcm_sender_id: "716764804082"
       },
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-sw',
+      options: {
+        swPath: 'src/utils/app-service-worker.js',
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,

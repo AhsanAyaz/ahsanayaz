@@ -8,8 +8,14 @@ import { rhythm } from "../utils/typography"
 import Img from "gatsby-image"
 import { ShareBlockStandard } from "react-custom-share";
 import {HOME_SHARE_BUTTONS_CONTENT} from '../constants/home-share-buttons';
+import { initializeFirebase } from '../notifications/notifications';
+
 
 class BlogIndex extends React.Component {
+  componentDidMount() {
+    initializeFirebase();
+  }
+
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title

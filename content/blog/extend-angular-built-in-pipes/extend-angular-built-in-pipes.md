@@ -3,7 +3,7 @@ title: How to extend Angular built-in pipes and why
 date: 2019-09-18 21:35:00
 author: Muhammad Ahsan Ayaz
 featuredImage: ../../assets/extend-angular-built-in-pipes.png
-description: In this article, we're going to talk about extending Angular built-in pipes. We'll see why we would extend that, and how easily it is achievable for our custom requirements.
+description: In this article, we're going to talk about extending Angular built-in pipes. We'll see why we would do that, and how that makes is so easy to implement our own custom requirements.
 tags:
   - angular
   - typescript
