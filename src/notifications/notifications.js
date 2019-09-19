@@ -2,8 +2,13 @@ import firebase from 'firebase/app';
 import 'firebase/messaging';
 import {FIREBASE_CONFIG} from '../constants/firebase-config';
 import {postData} from '../utils/post-data';
+let firebaseInitialized = false;
 
 export const initializeFirebase = () => {
+  if (firebaseInitialized) {
+    return;
+  }
+  firebaseInitialized = true;
   firebase.initializeApp(FIREBASE_CONFIG);
   typeof window !== 'undefined' && askForPermissioToReceiveNotifications();
 }
@@ -22,7 +27,7 @@ export const getMessagingToken = async (messaging = firebase.messaging) => {
   try {
     const currentToken = await messaging.getToken();
     if (currentToken) {
-      const resp = await postData('https://ahsanayazweb-push.herokuapp.com/subscribe', {
+      await postData('https://ahsanayazweb-push.herokuapp.com/subscribe', {
         token: currentToken
       });
     } else {
