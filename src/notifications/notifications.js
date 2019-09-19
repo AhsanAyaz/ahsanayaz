@@ -22,17 +22,15 @@ export const getMessagingToken = async (messaging = firebase.messaging) => {
   try {
     const currentToken = await messaging.getToken();
     if (currentToken) {
-      console.log(`currentToken = ${currentToken}`);
       const resp = await postData('https://ahsanayazweb-push.herokuapp.com/subscribe', {
         token: currentToken
       });
-      console.log(resp);
     } else {
       // Show permission request.
-      console.log('No Instance ID token available. Request permission to generate one.');
+      console.info('No Instance ID token available. Request permission to generate one.');
     }
   } catch (err) {
-    console.log('An error occurred while retrieving token. ', err);
+    console.error('An error occurred while retrieving token. ', err);
   }
   
 }
