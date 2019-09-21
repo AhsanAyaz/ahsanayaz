@@ -285,12 +285,12 @@ class MyComponent {
 <!-- each item in `subjects` is a string value -->
 <form class="form">
   <input class="owner"
-    id="ownerInput" [typeahead]="users | icpTitleCaseExtended : 'full_name'" type="text"
+    id="ownerInput" [typeahead]="users | titleCaseExtended : 'full_name'" type="text"
     typeaheadWaitMs="300" typeaheadOptionField="full_name">
 </form>
 ```
 
-Notice that we're using `| icpTitleCaseExtended : 'full_name'`. This `full_name` is a string which is passed to the `transform` method by Angular, and then we get it in our pipe using `args[0]`. NgxBootstrap's typeahead with an array of objects is a really good use case where our pipe can shine. Because we can't transform a property inside the items when passing it to the typeahead as input. 
+Notice that we're using `| titleCaseExtended : 'full_name'`. This `full_name` is a string which is passed to the `transform` method by Angular, and then we get it in our pipe using `args[0]`. NgxBootstrap's typeahead with an array of objects is a really good use case where our pipe can shine. Because we can't transform a property inside the items when passing it to the typeahead as input. 
 
 Welp! Our extended pipe is now ready to be used. You can get the pipe's code and example usage from this [Gist](https://gist.github.com/AhsanAyaz/29325c3ecfec5949e7de2d56ac1c7678) as well.
 
