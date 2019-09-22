@@ -7,7 +7,8 @@ module.exports = {
     social: {
       twitter: `ahsan_ayz`,
       github: `ahsanayaz`,
-      linkedin: `in/ahsanayaz`
+      linkedin: `in/ahsanayaz`,
+      youtube: 'UCAys-Lg76QcRNGc0dOr_bXA?sub_confirmation=1'
     },
   },
   plugins: [
@@ -134,7 +135,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-adsense`,
       options: {
-        publisherId: process.env.ADSENSE_PUBLISHER_ID
+        publisherId: "ca-pub-2995943378218316"
       },
     },
     `gatsby-plugin-zopfli`,
