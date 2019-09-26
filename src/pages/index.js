@@ -9,6 +9,8 @@ import Img from "gatsby-image"
 import { ShareBlockStandard } from "react-custom-share";
 import {HOME_SHARE_BUTTONS_CONTENT} from '../constants/home-share-buttons';
 import { initializeFirebase } from '../notifications/notifications';
+import { PINNED_REPOS } from "../data/projects-data";
+import ProjectPortal from "../components/project-portal"
 
 
 class BlogIndex extends React.Component {
@@ -62,6 +64,12 @@ class BlogIndex extends React.Component {
             </article>
           )
         })}
+
+        {(typeof window !== 'undefined' && 'HTMLPortalElement' in window) ? PINNED_REPOS.map((project) => {
+          return (
+            <ProjectPortal  key={project.id} project={project}/>
+          )
+        }) : null}
         <ShareBlockStandard {...HOME_SHARE_BUTTONS_CONTENT} />
       </Layout>
     )

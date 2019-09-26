@@ -40,3 +40,7 @@ code {
   -ms-hyphens: none;
   hyphens: none;
 }
+
+.hide-scroll-bars {
+  overflow: hidden;
+}
