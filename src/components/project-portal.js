@@ -32,7 +32,7 @@ function ProjectPortal({ project  }) {
     embedContainer.style.position = 'absolute';
     embedContainer.style.bottom = `${initialY - 16}px`;
     embedContainer.style.left = `${-20}px`;
-    embedContainer.style.width = '95%';
+    embedContainer.style.width = '100%';
     embedContainer.style.paddingTop = 'calc(95% * 0.65)';
     portal.postMessage({ control: 'hide' }, src.origin);
   }
