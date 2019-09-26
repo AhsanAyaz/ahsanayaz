@@ -7,7 +7,7 @@ function ProjectPortal({ project  }) {
   let initialY = 0;
   let initialWidth = 0;
   let isPortalHostListenerAdded = false;
-  const src = new URL(`https://projects.ahsanayaz.com/#/open-source/${project.id}?portal=true`);
+  const src = new URL(`https://projects.ahsanayaz.com/#/open-source/${project.id}?portal=true&ts=${Date.now()}`);
   const onEmbedContainerClick = ev => {
     console.log(ev)
     if (ev.target === portal) {
@@ -31,8 +31,13 @@ function ProjectPortal({ project  }) {
     // embedContainer.style.top = `${initialY - TARGET_Y}px`;
     embedContainer.style.position = 'absolute';
     embedContainer.style.bottom = `${initialY - 16}px`;
-    embedContainer.style.left = `${-20}px`;
-    embedContainer.style.width = '100%';
+    // embedContainer.style.left = `${-20}px`;
+    // embedContainer.style.width = '100%';
+    if (embedContainer.innerWidth >= 600) {
+      embedContainer.style.width = '600px';
+    } else {
+      embedContainer.style.width = '100%';
+    }
     embedContainer.style.paddingTop = 'calc(95% * 0.65)';
     portal.postMessage({ control: 'hide' }, src.origin);
   }
@@ -56,6 +61,7 @@ function ProjectPortal({ project  }) {
     const predecessor = evt.adoptPredecessor();
     // show the scroll bar when coming back
     document.body.classList.remove('hide-scroll-bars');
+    document.documentElement.style.overflowY = "scroll";
     // embed predecessor
     returnFromEmbed(predecessor);
   };
@@ -96,7 +102,7 @@ function ProjectPortal({ project  }) {
           window.scrollTo({
             top: scrollTop
           });
-        }, 300);
+        }, 200);
     });
 
     // // Reset the position of the container after the portal activates
@@ -106,6 +112,7 @@ function ProjectPortal({ project  }) {
   const _resetPositionOfEmbedContainer =() => {
     // hide the scroll bar so that it won't show when used as a predecessor 
     document.body.classList.add('hide-scroll-bars');
+    document.documentElement.style.overflowY = "hidden";
     embedContainer.style.transition = '';
     embedContainer.style.width = '100%';
     embedContainer.style.position = 'relative';
