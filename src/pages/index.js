@@ -65,11 +65,13 @@ class BlogIndex extends React.Component {
           )
         })}
 
-        {(typeof window !== 'undefined' && 'HTMLPortalElement' in window) ? PINNED_REPOS.map((project) => {
-          return (
-            <ProjectPortal  key={project.id} project={project}/>
-          )
-        }) : null}
+        <div className="projects" style={{position: 'relative'}}>
+          {(typeof window !== 'undefined' && 'HTMLPortalElement' in window) ? PINNED_REPOS.map((project) => {
+            return (
+              <ProjectPortal  key={project.id} project={project}/>
+            )
+          }) : null}
+        </div>
         <ShareBlockStandard {...HOME_SHARE_BUTTONS_CONTENT} />
       </Layout>
     )

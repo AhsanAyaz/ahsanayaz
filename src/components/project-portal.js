@@ -6,6 +6,7 @@ function ProjectPortal({ project  }) {
   let portal = null;
   let initialY = 0;
   let initialWidth = 0;
+  let projectCardWidth = 0;
   let isPortalHostListenerAdded = false;
   const src = new URL(`https://projects.ahsanayaz.com/#/open-source/${project.id}?portal=true&ts=${Date.now()}`);
   const onEmbedContainerClick = ev => {
@@ -16,6 +17,7 @@ function ProjectPortal({ project  }) {
   }
   const animateAndActivate = () => {
     const TARGET_Y = 10;
+    const clientCardMargin = 16;
     // Animate the embed container
     initialY = embedContainer.getBoundingClientRect().y;
     console.log('initialY', initialY);
@@ -26,20 +28,25 @@ function ProjectPortal({ project  }) {
     padding-top 0.3s cubic-bezier(.49,.86,.37,1.01)`;
     
     // embedContainer.style.top = `${initialY}px`;
-    embedContainer.style.margin = 'auto';
     initialWidth = embedContainer.getBoundingClientRect().width;
+    embedContainer.style.margin = 'auto';
     // embedContainer.style.top = `${initialY - TARGET_Y}px`;
+    embedContainer.style.width = `${initialWidth}px`;
     embedContainer.style.position = 'absolute';
-    embedContainer.style.bottom = `${initialY - 16}px`;
+    embedContainer.style.bottom = `${initialY - clientCardMargin}px`;
     // embedContainer.style.left = `${-20}px`;
     // embedContainer.style.width = '100%';
-    if (embedContainer.innerWidth >= 600) {
-      embedContainer.style.width = '600px';
+    if (embedContainer.clientWidth >= 800) {
+      embedContainer.style.width = `${630 - clientCardMargin}px`;
+      projectCardWidth = 630;
     } else {
       embedContainer.style.width = '100%';
+      projectCardWidth = embedContainer.clientWidth;
     }
+    projectCardWidth = projectCardWidth - clientCardMargin // 16 is the margin of the target page's card;
     embedContainer.style.paddingTop = 'calc(95% * 0.65)';
     portal.postMessage({ control: 'hide' }, src.origin);
+    portal.postMessage({ projectCardWidth }, src.origin);
   }
 
   const initEventListeners = (ev) => {
@@ -62,6 +69,8 @@ function ProjectPortal({ project  }) {
     // show the scroll bar when coming back
     document.body.classList.remove('hide-scroll-bars');
     document.documentElement.style.overflowY = "scroll";
+    embedContainer.style.width = `${initialWidth}px`;
+    
     // embed predecessor
     returnFromEmbed(predecessor);
   };
@@ -76,7 +85,7 @@ function ProjectPortal({ project  }) {
           photoSrc: '/img/profile.png',
           initialY: initialY,
           activatedWidth: embedContainer.getBoundingClientRect().width,
-          initialWidth: initialWidth,
+          initialWidth: initialWidth
         }
     }).then((_) => {
         // Check if this page was adopted by the embedded content.
