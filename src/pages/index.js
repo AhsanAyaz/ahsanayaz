@@ -70,7 +70,21 @@ class BlogIndex extends React.Component {
             return (
               <ProjectPortal  key={project.id} project={project}/>
             )
-          }) : null}
+          }) : <div className="projects"
+          style={{
+            marginBottom: rhythm(1 / 4),
+          }}>
+            <header
+              style={{
+                marginBottom: rhythm(2),
+              }}>
+              <h3>
+                <a style={{ boxShadow: `none` }} href={'https://projects.ahsanayaz.com'}>
+                  Projects
+                </a>
+              </h3>
+            </header>
+          </div>}
         </div>
         <ShareBlockStandard {...HOME_SHARE_BUTTONS_CONTENT} />
       </Layout>
