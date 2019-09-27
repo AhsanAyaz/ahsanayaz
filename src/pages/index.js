@@ -65,15 +65,19 @@ class BlogIndex extends React.Component {
           )
         })}
 
-        <div className="projects" style={{position: 'relative'}}>
-          {(typeof window !== 'undefined' && 'HTMLPortalElement' in window) ? PINNED_REPOS.map((project) => {
-            return (
-              <ProjectPortal  key={project.id} project={project}/>
-            )
-          }) : <div className="projects"
-          style={{
-            marginBottom: rhythm(1 / 4),
-          }}>
+        {
+          (typeof window !== 'undefined' && 'HTMLPortalElement' in window) ?
+          (<div className="projects" style={{position: 'relative'}}>
+            {(typeof window !== 'undefined' && 'HTMLPortalElement' in window) ? PINNED_REPOS.map((project) => {
+              return (
+                <ProjectPortal  key={project.id} project={project}/>
+              )
+            }) : null}
+          </div>) : 
+          (<div className="projects"
+            style={{
+              marginBottom: rhythm(1 / 4),
+            }}>
             <header
               style={{
                 marginBottom: rhythm(2),
@@ -84,8 +88,8 @@ class BlogIndex extends React.Component {
                 </a>
               </h3>
             </header>
-          </div>}
-        </div>
+          </div>)
+        }
         <ShareBlockStandard {...HOME_SHARE_BUTTONS_CONTENT} />
       </Layout>
     )
