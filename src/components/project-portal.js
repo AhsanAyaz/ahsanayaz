@@ -7,35 +7,27 @@ function ProjectPortal({ project  }) {
   let initialY = 0;
   let initialWidth = 0;
   let projectCardWidth = 0;
-  let isPortalHostListenerAdded = false;
   const src = new URL(`https://projects.ahsanayaz.com/#/open-source/${project.id}?portal=true&ts=${Date.now()}`);
   const onEmbedContainerClick = ev => {
-    console.log(ev)
     if (ev.target === portal) {
       animateAndActivate()
     }
   }
   const animateAndActivate = () => {
-    const TARGET_Y = 10;
     const clientCardMargin = 16;
     // Animate the embed container
     initialY = embedContainer.getBoundingClientRect().y;
-    console.log('initialY', initialY);
     embedContainer.style.bottom = `${0}px`;
     embedContainer.style.transition = `bottom 0.6s cubic-bezier(.49,.86,.37,1.01),
     left 0.3s cubic-bezier(.49,.86,.37,1.01), 
     width 0.3s cubic-bezier(.49,.86,.37,1.01),
     padding-top 0.3s cubic-bezier(.49,.86,.37,1.01)`;
     
-    // embedContainer.style.top = `${initialY}px`;
     initialWidth = embedContainer.getBoundingClientRect().width;
     embedContainer.style.margin = 'auto';
-    // embedContainer.style.top = `${initialY - TARGET_Y}px`;
     embedContainer.style.width = `${initialWidth}px`;
     embedContainer.style.position = 'absolute';
     embedContainer.style.bottom = `${initialY - clientCardMargin}px`;
-    // embedContainer.style.left = `${-20}px`;
-    // embedContainer.style.width = '100%';
     if (embedContainer.clientWidth >= 800) {
       embedContainer.style.width = `${630 - clientCardMargin}px`;
       projectCardWidth = 630;
@@ -80,9 +72,6 @@ function ProjectPortal({ project  }) {
     // Activate portal with data used in the activated page
     portal.activate({
         data: {
-          followed: false,
-          name: 'Yusuke Utsunomiya',
-          photoSrc: '/img/profile.png',
           initialY: initialY,
           activatedWidth: embedContainer.getBoundingClientRect().width,
           initialWidth: initialWidth
@@ -93,20 +82,12 @@ function ProjectPortal({ project  }) {
             return;
         }
 
-
-        // don't add event listeners if it was already added
-        // if (isPortalHostListenerAdded) {
-        //     return;
-        // }
-
         window.addEventListener('portalactivate', portalBackEvent);
 
-        // Listen to messages (follow/unfollow)
+        // Listen to messages
         window.portalHost.addEventListener('message', (evt) => {
-            const isFollowed = evt.data.isFollowed;
-            // this._changeFollowStatus(!isFollowed);
+            // act upon receiving message
         });
-        isPortalHostListenerAdded = true;
         setTimeout(() => {
           window.scrollTo({
             top: scrollTop
@@ -132,7 +113,6 @@ function ProjectPortal({ project  }) {
   }
 
   const returnFromEmbed = (predecessor) => {
-    // this.playerUI.style.display = ''
     predecessor.style.width = '100%';
     predecessor.style.height = '400px';
     predecessor.style.borderRadius = '6px';
@@ -141,7 +121,6 @@ function ProjectPortal({ project  }) {
   }
 
   useEffect(() => {
-    console.log('mount it!');
     initEventListeners();
   }, []); // passing an empty array as second argument triggers the callback in useEffect only after the initial render thus replicating `componentDidMount` lifecycle behaviour
 

@@ -26,9 +26,9 @@ class NotFoundPage extends React.Component {
         border-radius: 10%;
         transform: scale(${initialScale});
         bottom: calc(20px + 30% * 0.4 - 50%);
-        left: calc(100% * 0.4 - 50%);
-        top: 0;
+        left: 0;
         right: 0;
+        top: 0;
         margin: auto;
         z-index: 10000;
       }
