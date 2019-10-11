@@ -4,6 +4,11 @@
   --vscode-highlight-line-highlighted-border-width: 2px; /* default: 2px */
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 a {
   box-shadow: none !important;
 }

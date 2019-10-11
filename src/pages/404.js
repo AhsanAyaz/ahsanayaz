@@ -19,8 +19,6 @@ class NotFoundPage extends React.Component {
       portal {
         cursor: pointer;
         position:fixed;
-        height: 500px;
-        width: 500px;
         opacity: 0;
         box-shadow: 0 0 20px 10px #999;
         border-radius: 10%;
@@ -31,14 +29,16 @@ class NotFoundPage extends React.Component {
         top: 0;
         margin: auto;
         z-index: 10000;
+        width: 100%;
+        height: 400px;
       }
       .portal-transition {
         transition:
-          transform 0.7s,
+          transform 1.5s,
           height 0.3s,
           width 0.3s,
-          border-radius 0.1s,
-          opacity 1.0s;
+          border-radius 0.2s,
+          opacity 0.8s;
       }
       @media (prefers-reduced-motion: reduce) {
         .portal-transition {
