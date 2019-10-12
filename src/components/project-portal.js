@@ -1,5 +1,6 @@
 import React, {useEffect} from "react"
 import { rhythm } from "../utils/typography"
+import { EXTERNAL_URLS } from '../constants/external-urls';
 
 function ProjectPortal({ project  }) {
   let embedContainer = null;
@@ -7,14 +8,14 @@ function ProjectPortal({ project  }) {
   let initialY = 0;
   let initialWidth = 0;
   let projectCardWidth = 0;
-  const src = new URL(`https://projects.ahsanayaz.com/#/open-source/${project.id}?portal=true&ts=${Date.now()}`);
+  const src = new URL(`${EXTERNAL_URLS.PROJECTS}/#/open-source/${project.id}?portal=true&ts=${Date.now()}`);
   const onEmbedContainerClick = ev => {
     if (ev.target === portal) {
       animateAndActivate()
     }
   }
   const animateAndActivate = () => {
-    const clientCardMargin = 16;
+    const clientCardMargin = 20;
     // Animate the embed container
     initialY = embedContainer.getBoundingClientRect().y;
     embedContainer.style.bottom = `${0}px`;
@@ -92,17 +93,14 @@ function ProjectPortal({ project  }) {
           window.scrollTo({
             top: scrollTop
           });
-        }, 200);
+          // Reset the position of the container after the portal activates
+          _resetPositionOfEmbedContainer();
+        }, 0);
     });
-
-    // // Reset the position of the container after the portal activates
-    _resetPositionOfEmbedContainer();
   }
 
   const _resetPositionOfEmbedContainer =() => {
     // hide the scroll bar so that it won't show when used as a predecessor 
-    document.body.classList.add('hide-scroll-bars');
-    document.documentElement.style.overflowY = "hidden";
     embedContainer.style.transition = '';
     embedContainer.style.width = '100%';
     embedContainer.style.position = 'relative';

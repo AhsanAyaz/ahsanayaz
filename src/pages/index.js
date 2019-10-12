@@ -7,7 +7,8 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import Img from "gatsby-image"
 import { ShareBlockStandard } from "react-custom-share";
-import {HOME_SHARE_BUTTONS_CONTENT} from '../constants/home-share-buttons';
+import { HOME_SHARE_BUTTONS_CONTENT } from '../constants/home-share-buttons';
+import { EXTERNAL_URLS } from '../constants/external-urls';
 import { initializeFirebase } from '../notifications/notifications';
 import { PINNED_REPOS } from "../data/projects-data";
 import ProjectPortal from "../components/project-portal"
@@ -83,7 +84,7 @@ class BlogIndex extends React.Component {
                 marginBottom: rhythm(2),
               }}>
               <h3>
-                <a style={{ boxShadow: `none` }} href={'https://projects.ahsanayaz.com'}>
+                <a style={{ boxShadow: `none` }} href={EXTERNAL_URLS.PROJECTS}>
                   Projects
                 </a>
               </h3>
