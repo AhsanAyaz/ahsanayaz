@@ -28,6 +28,7 @@ const Bio = () => {
             twitter
             github
             linkedin
+            youtube
           }
         }
       }
