@@ -8,7 +8,7 @@ module.exports = {
       twitter: `ahsan_ayz`,
       github: `ahsanayaz`,
       linkedin: `in/ahsanayaz`,
-      youtube: 'UCAys-Lg76QcRNGc0dOr_bXA?sub_confirmation=1'
+      youtube: 'UCAys-Lg76QcRNGc0dOr_bXA'
     },
   },
   plugins: [
