@@ -66,7 +66,7 @@ class BlogIndex extends React.Component {
           )
         })}
 
-        {/* {
+        {
           (typeof window !== 'undefined' && 'HTMLPortalElement' in window) ?
           (<div className="projects" style={{position: 'relative'}}>
             {(typeof window !== 'undefined' && 'HTMLPortalElement' in window) ? PINNED_REPOS.map((project) => {
@@ -90,7 +90,7 @@ class BlogIndex extends React.Component {
               </h3>
             </header>
           </div>)
-        } */}
+        }
         <ShareBlockStandard {...HOME_SHARE_BUTTONS_CONTENT} />
       </Layout>
     )
