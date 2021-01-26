@@ -1,14 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `ahsan.dev`,
+    title: `ahsanayaz.com`,
     author: `Muhammad Ahsan Ayaz`,
     description: `This is a place where Muhammad Ahsan Ayaz shares code and examples. Ahsan Ayaz is a Google Developers Expert in Angular and Web Technologies.`,
     siteUrl: `https://ahsanayaz.com/`,
     social: {
-      twitter: `ahsan_ayz`,
+      twitter: `muhd_ahsanayaz`,
+      facebook: `muhd.ahsanayaz`,
+      instagram: `muhd.ahsanayaz`,
       github: `ahsanayaz`,
       linkedin: `in/ahsanayaz`,
-      youtube: 'UCAys-Lg76QcRNGc0dOr_bXA'
+      youtube: 'UCAys-Lg76QcRNGc0dOr_bXA',
+      gdeProfile: 'https://developers.google.com/community/experts/directory/profile/profile-muhammad_ahsan_ayaz'
     },
   },
   plugins: [

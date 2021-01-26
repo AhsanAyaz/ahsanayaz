@@ -26,9 +26,11 @@ const Bio = () => {
           author
           social {
             twitter
+            facebook
             github
             linkedin
             youtube
+            gdeProfile
           }
         }
       }
@@ -63,12 +65,15 @@ const Bio = () => {
         Personal blog of <strong>{author}</strong>.
         {` `}
         <div>
-          <a href={`https://google-developers.appspot.com/community/experts/directory/profile/profile-ahsan_ayaz`}>Google Developers Expert</a> in Angular & Web Technologies.
+          <a href={social.gdeProfile}>Google Developers Expert</a> in Angular & Web Technologies.
           {` `}
           <i>
             <p>
               <a href={`https://twitter.com/${social.twitter}`}>
                 Twitter
+              </a>, {` `}
+              <a href={`https://facebook.com/${social.facebook}`}>
+                Facebook
               </a>, {` `}
               <a href={`https://github.com/${social.github}`}>
                 Github
