@@ -9,6 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allMarkdownRemark(
+          filter: { fields: { draft: { eq: false } } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -54,8 +55,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const originalSlug = createFilePath({ node, getNode })
-    const slugChunksSplitted = originalSlug.split('/')
-    const finalSlug = slugChunksSplitted.length === 4 ? `/${slugChunksSplitted[1]}/` : originalSlug;
+    const slugChunksSplitted = originalSlug.split("/")
+    const finalSlug =
+      slugChunksSplitted.length === 4
+        ? `/${slugChunksSplitted[1]}/`
+        : originalSlug
     createNodeField({
       name: `slug`,
       node,

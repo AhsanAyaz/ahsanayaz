@@ -61,23 +61,21 @@ const Bio = () => {
       <div
         style={{
           flex: 1,
-        }}>
-        Personal blog of <strong>{author}</strong>.
-        {` `}
+        }}
+      >
+        Personal blog of <strong>{author}</strong>.{` `}
         <div>
-          <a href={social.gdeProfile}>Google Developers Expert</a> in Angular & Web Technologies.
+          <a href={social.gdeProfile}>Google Developers Expert</a> in Angular &
+          Web Technologies.
           {` `}
           <i>
             <p>
-              <a href={`https://twitter.com/${social.twitter}`}>
-                Twitter
-              </a>, {` `}
+              <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>,{" "}
+              {` `}
               <a href={`https://facebook.com/${social.facebook}`}>
                 Facebook
               </a>, {` `}
-              <a href={`https://github.com/${social.github}`}>
-                Github
-              </a>, {` `}
+              <a href={`https://github.com/${social.github}`}>Github</a>, {` `}
               <a href={`https://linkedin.com/${social.linkedin}`}>
                 LinkedIn
               </a>, {` `}

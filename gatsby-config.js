@@ -10,8 +10,9 @@ module.exports = {
       instagram: `muhd.ahsanayaz`,
       github: `ahsanayaz`,
       linkedin: `in/ahsanayaz`,
-      youtube: 'UCAys-Lg76QcRNGc0dOr_bXA',
-      gdeProfile: 'https://developers.google.com/community/experts/directory/profile/profile-muhammad_ahsan_ayaz'
+      youtube: "UCAys-Lg76QcRNGc0dOr_bXA",
+      gdeProfile:
+        "https://developers.google.com/community/experts/directory/profile/profile-muhammad_ahsan_ayaz",
     },
   },
   plugins: [
@@ -32,8 +33,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `ahsanayaz-com`
-      }
+        shortname: `ahsanayaz-com`,
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -75,33 +76,35 @@ module.exports = {
                   " » ",
                   { field: "date", format: "mmmm dS" },
                 ],
-              }
-            }
+              },
+            },
           },
           {
             resolve: `gatsby-remark-vscode`,
             // All options are optional. Defaults shown here.
             options: {
-              colorTheme: 'Dark+ (default dark)', // Read on for list of included themes. Also accepts object and function forms.
-              wrapperClassName: '',   // Additional class put on 'pre' tag
-              injectStyles: true,     // Injects (minimal) additional CSS for layout and scrolling
-              extensions: [],         // Extensions to download from the marketplace to provide more languages and themes
-              languageAliases: {},    // Map of custom/unknown language codes to standard/known language codes
-              replaceColor: x => x,   // Function allowing replacement of a theme color with another. Useful for replacing hex colors with CSS variables.
-              getLineClassName: ({    // Function allowing dynamic setting of additional class names on individual lines
-                content,              //   - the string content of the line
-                index,                //   - the zero-based index of the line within the code fence
-                language,             //   - the language specified for the code fence
-                codeFenceOptions      //   - any options set on the code fence alongside the language (more on this later)
-              }) => '',
-              logLevel: 'error'       // Set to 'warn' to debug if something looks wrong
-            }
-          }
+              colorTheme: "Dark+ (default dark)", // Read on for list of included themes. Also accepts object and function forms.
+              wrapperClassName: "", // Additional class put on 'pre' tag
+              injectStyles: true, // Injects (minimal) additional CSS for layout and scrolling
+              extensions: [], // Extensions to download from the marketplace to provide more languages and themes
+              languageAliases: {}, // Map of custom/unknown language codes to standard/known language codes
+              replaceColor: x => x, // Function allowing replacement of a theme color with another. Useful for replacing hex colors with CSS variables.
+              getLineClassName: ({
+                // Function allowing dynamic setting of additional class names on individual lines
+                content, //   - the string content of the line
+                index, //   - the zero-based index of the line within the code fence
+                language, //   - the language specified for the code fence
+                codeFenceOptions, //   - any options set on the code fence alongside the language (more on this later)
+              }) => "",
+              logLevel: "error", // Set to 'warn' to debug if something looks wrong
+            },
+          },
         ],
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-draft`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -119,13 +122,13 @@ module.exports = {
         theme_color: `#007acc`,
         display: `minimal-ui`,
         icon: `content/assets/site_icon.png`,
-        gcm_sender_id: "716764804082"
+        gcm_sender_id: "716764804082",
       },
     },
     {
-      resolve: 'gatsby-plugin-sw',
+      resolve: "gatsby-plugin-sw",
       options: {
-        swPath: 'src/utils/app-service-worker.js',
+        swPath: "src/utils/app-service-worker.js",
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -138,7 +141,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-adsense`,
       options: {
-        publisherId: "ca-pub-2995943378218316"
+        publisherId: "ca-pub-2995943378218316",
       },
     },
     `gatsby-plugin-zopfli`,
