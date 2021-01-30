@@ -10,6 +10,7 @@ import { ShareBlockStandard } from "react-custom-share"
 import {BLOG_SHARE_BUTTONS_CONTENT} from '../constants/blog-share-buttons-content'
 import { Disqus } from 'gatsby-plugin-disqus'
 import {DISQUS_CONFIG} from '../constants/disqus-config';
+import Socials from "../components/socials/socials"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -56,6 +57,17 @@ class BlogPostTemplate extends React.Component {
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <hr
+            style={{
+              marginBottom: rhythm(1),
+            }}
+          />
+          <section>
+            <h4>
+              Socials
+            </h4>
+            <Socials size={24}/>
+          </section>
           <hr
             style={{
               marginBottom: rhythm(1),
