@@ -10,7 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
-import Socials from "./socials/socials";
+import Socials from "./socials/socials"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -59,14 +59,15 @@ const Bio = () => {
           flex: 1,
         }}
       >
-        Personal blog of <strong>{author}</strong>.{` `}
         <div>
+          {author} is a Senior Software Engineer at{" "}
+          <a href="https://klarna.com">Klarna</a> and a{" "}
           <a href={social.gdeProfile}>Google Developers Expert</a> in Angular &
-          Web Technologies.
-          {` `}
-          <div style={{marginTop: '10px'}}>
-            <Socials/>
-          </div>
+          Web Technologies. He teaches different technologies and builds quality
+          software to help make the world a better place.
+        </div>
+        <div style={{ marginTop: "10px" }}>
+          <Socials />
         </div>
       </div>
     </div>

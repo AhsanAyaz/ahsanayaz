@@ -7,9 +7,9 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import Img from "gatsby-image"
 import { ShareBlockStandard } from "react-custom-share"
-import {BLOG_SHARE_BUTTONS_CONTENT} from '../constants/blog-share-buttons-content'
-import { Disqus } from 'gatsby-plugin-disqus'
-import {DISQUS_CONFIG} from '../constants/disqus-config';
+import { BLOG_SHARE_BUTTONS_CONTENT } from "../constants/blog-share-buttons-content"
+import { Disqus } from "gatsby-plugin-disqus"
+import { DISQUS_CONFIG } from "../constants/disqus-config"
 import Socials from "../components/socials/socials"
 
 class BlogPostTemplate extends React.Component {
@@ -21,10 +21,11 @@ class BlogPostTemplate extends React.Component {
     }
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next, slug } = this.props.pageContext
+    const metaImage = `${slug}seo.jpg`
 
     const disqusConfig = DISQUS_CONFIG({
       title: post.frontmatter.title,
-      location: this.props.location
+      location: this.props.location,
     })
 
     return (
@@ -32,6 +33,8 @@ class BlogPostTemplate extends React.Component {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          isBlogPost={true}
+          metaImage={metaImage}
         />
         <article>
           <header>
@@ -63,22 +66,22 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <section>
-            <h4>
-              Socials
-            </h4>
-            <Socials size={24}/>
+            <h4>Socials</h4>
+            <Socials size={24} />
           </section>
           <hr
             style={{
               marginBottom: rhythm(1),
             }}
           />
-          <ShareBlockStandard {...BLOG_SHARE_BUTTONS_CONTENT({
-            slug: post.fields.slug,
-            title: post.frontmatter.title,
-            description: post.frontmatter.description,
-            media: post.frontmatter.featuredImage
-          })}/>
+          <ShareBlockStandard
+            {...BLOG_SHARE_BUTTONS_CONTENT({
+              slug: post.fields.slug,
+              title: post.frontmatter.title,
+              description: post.frontmatter.description,
+              media: post.frontmatter.featuredImage,
+            })}
+          />
           <hr
             style={{
               marginTop: rhythm(1),

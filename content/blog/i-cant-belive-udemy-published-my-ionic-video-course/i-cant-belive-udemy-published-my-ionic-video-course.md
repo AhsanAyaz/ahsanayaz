@@ -1,6 +1,7 @@
 ---
 title: I can't believe UDEMY published my IONIC Video Course
-date: 2021-01-30 16:00:00
+date: 2021-01-31 1:00:00
+featuredImage: ../../assets/i-cant-belive-udemy-published-my-ionic-video-course.png
 author: Muhammad Ahsan Ayaz
 description: I just could not believe my eyes when I got the email from an Acquisition Editor at Packt that I got my IONIC video course published on UDEMY. Let me tell you how it all happened.
 
@@ -9,20 +10,23 @@ tags:
   - typescript
   - web development
   - ionic
+  - udemy
+  - course
+  - packt
 ---
 
 > 📢 The course [Hands-On App Development with Ionic](https://www.udemy.com/course/hands-on-app-development-with-ionic/) on [Udemy](https://www.udemy.com/course/hands-on-app-development-with-ionic/) is on a **89%** sale right now at **€12.99** 💰💰. And if you hurry, I have **TEN LIMITED DISCOUNT COUPONS** for the first 10 folks who reach out to any of my socials for them.
 
-Being a Software Engineer is challenging. Not because it is hard. But because of the fact that you have to be updated with the latest trends and changes happening in the industry. Now you could be aware of these by subscribing to tech newsletters,following influencers on Twitter, etc. Ultimately, you'd have to go and learn about the changes through some articles, videos, or even by reading books. For me, [Udemy](https://udemy.com) has been one of the sources of learning and keeping myself up to date with brilliant content from the amazing authors out there. 
+Being a Software Engineer is challenging. Not because it is hard. But because of the fact that you have to be updated with the latest trends and changes happening in the industry. Now you could be aware of these by subscribing to tech newsletters, following influencers on Twitter, etc. Ultimately, you'd have to go and learn about the changes through some articles, videos, or even by reading books. For me, [Udemy](https://udemy.com) has been one of the sources of learning and keeping myself up to date with brilliant content from the amazing authors out there. 
 
-Anyyays, it was a while ago when a Video Acquisition Editor from Packt reached out to me. He asked me if I was interested in creating an Ionic video course. As always, I was pretty happy to do something new. Something that adds value to the developers community and something that adds value to my achievements and portfolio as well. So...
+Anyways, it was a while ago when a *Video Acquisition Editor* from [Packt](https://www.packtpub.com/) reached out to me to ask if I was interested in creating a video course on Ionic. As always, I was pretty happy to do something new. Something that adds value to the developers community and something that adds value to my achievements and portfolio as well. So...
 
 <p align="center">
   <img title="I said yes gif" alt="I said yes gif" src="https://media.giphy.com/media/l1J9EibRkt7GsMIJG/giphy.gif">
 </p>
 
-## How was my experience building the course
-It took me a lot of time, efforts and patience to build the video course. It was my first ever video course and I had absolutely no experience of recording tutorials at a Pro level. For starters, my room had very less furniture, and my voice would bounce of the walls while recording 🤦‍♂️
+## My experience building the course
+It took me a lot of time, efforts and patience to build the video course. It was my first ever video course and I had absolutely no experience of recording tutorials at a Pro level. For starters, I lived in Karachi where the weather is usually hot so I had to turn on the fan or the AC, and then the recordings would their noise. And my room had very less furniture, so my voice would bounce of the walls while recording as well 🤦‍♂️
 
 <p align="center">
   <img title="echo gif" width=500 alt="echo gif" src="https://media.tenor.com/images/28ac68b2d54e8fe85a34a2248b026725/tenor.gif">
@@ -30,7 +34,7 @@ It took me a lot of time, efforts and patience to build the video course. It was
 
 <hr>
 
-I could keep going on talking about the magnitude of issues I faced during the process. Should I talk about the fact that due to this reverb, at 3:00 AM when I'd think that everyone is sleeping and I can record in peace in the living room, suddenly roosters 🐓🐓 from the neighbourhood would start crowing? Or the fact that there'd be vehicles 🏍️ 🚗 going around suddenly on the street that'd ruin the recording. Or that the security guard on the street would whistle 📯 every two minutes. And then I'd be like:
+I mean I could keep going on talking about the magnitude of issues I faced during the process. I could talk about the fact that due to this reverb, at 3:00 AM when I'd think that everyone is sleeping and I can record in peace in the living room, suddenly roosters 🐓🐓 from the neighbourhood would start crowing. The fact that there'd be vehicles 🏍️ 🚗 going around suddenly on the street that'd ruin the recording. Or that the security guard on the street would whistle 📯 every two minutes. And then I'd be like:
 
 <p align="center">
   <img title="throw table gif" width=500 alt="failure gif" src="https://media1.giphy.com/media/X83Y7r03T6uty/200.gif">
@@ -45,7 +49,7 @@ Anyways I finally bought some [Acoustic Foams from ArrowZoom](https://arrowzoom.
 
 
 ## Why you should learn Ionic in 2021
-There's no doubt that there are number of ways to build mobile apps and PWAs today. However, it might require specialized skillset depending on the way you choose to build your apps. Here are a few reasons / use cases where you would want to use IONIC for building your apps:
+There's no doubt that there are number of ways to build mobile apps and PWAs today. However, it might require specialized skillset depending on the way you choose to build your apps. Here are a few reasons / use cases where you would want to use IONIC for building your applications:
 
 - You have Web Developers in your team who are well versed in the modern Web Technologies, Frameworks and Libraries. Be it [React](https://reactjs.org/), [Angular](https://ionicframework.com/docs/native), [VueJS](https://vuejs.org/) or just vanilla JavaScript, Ionic works with all.
 - Ionic is not just a framework or libary, it is an SDK with a REALLY STRONG ECOSYSTEM. It has a [CLI](https://ionicframework.com/docs/cli), [Ionic Native](https://ionicframework.com/docs/native/community) that provides capability to use the Native APIs using both [Cordova](https://cordova.apache.org/) and [Capacitor](https://capacitorjs.com/).
@@ -65,7 +69,7 @@ Use local notifications to set reminders
 ## Whom the course is targeted to
 You should definitely try out the [course](https://www.udemy.com/course/hands-on-app-development-with-ionic/) if:
 - You're a beginner in JavaScript and are interested in building hybrid mobile applications with minimal knowledge and experience in Web Technologies.
-- You're either a React, Angular or VueJS developer but don't just want to keep your domain limited to building Web Applications
+- You're either a [React](https://reactjs.org/), [Angular](https://ionicframework.com/docs/native), or [VueJS](https://vuejs.org/) developer but don't just want to keep your domain limited to building Web Applications
 - You're a consultant who is looking to build a quick prototype of a mobile application using Web Technologies.
 - You're working on your Academic Final Year Project and have limited resource and time.
 
