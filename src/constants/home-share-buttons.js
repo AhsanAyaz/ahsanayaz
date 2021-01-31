@@ -1,9 +1,9 @@
 import {FaTwitter, FaFacebook, FaGooglePlus, FaEnvelope, FaPinterest, FaLinkedin} from "react-icons/fa";
-import { ShareButtonCircle } from "react-custom-share";
+import { ShareButtonRectangle } from "react-custom-share";
 
 export const HOME_SHARE_BUTTONS_CONTENT = {
   url: "https://ahsanayaz.com/",
-  button: ShareButtonCircle,
+  button: ShareButtonRectangle,
   buttons: [
     { network: "Twitter", icon: FaTwitter },
     { network: "Facebook", icon: FaFacebook },

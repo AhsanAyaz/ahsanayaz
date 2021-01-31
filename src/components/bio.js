@@ -10,6 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
+import Socials from "./socials/socials"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -25,11 +26,6 @@ const Bio = () => {
         siteMetadata {
           author
           social {
-            twitter
-            facebook
-            github
-            linkedin
-            youtube
             gdeProfile
           }
         }
@@ -63,27 +59,15 @@ const Bio = () => {
           flex: 1,
         }}
       >
-        Personal blog of <strong>{author}</strong>.{` `}
         <div>
+          {author} is a Senior Software Engineer at{" "}
+          <a href="https://klarna.com">Klarna</a> and a{" "}
           <a href={social.gdeProfile}>Google Developers Expert</a> in Angular &
-          Web Technologies.
-          {` `}
-          <i>
-            <p>
-              <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>,{" "}
-              {` `}
-              <a href={`https://facebook.com/${social.facebook}`}>
-                Facebook
-              </a>, {` `}
-              <a href={`https://github.com/${social.github}`}>Github</a>, {` `}
-              <a href={`https://linkedin.com/${social.linkedin}`}>
-                LinkedIn
-              </a>, {` `}
-              <a href={`https://youtube.com/channel/${social.youtube}`}>
-                YouTube
-              </a>
-            </p>
-          </i>
+          Web Technologies. He teaches different technologies and builds quality
+          software to help make the world a better place.
+        </div>
+        <div style={{ marginTop: "10px" }}>
+          <Socials />
         </div>
       </div>
     </div>

@@ -60,8 +60,8 @@ class NotFoundPage extends React.Component {
     const portal = document.createElement('portal');
     // Let's navigate into the WICG Portals spec page
     portal.src = 'https://ahsanayaz.com';
-    // Add a class that defines the transition. Consider using 
-    // `prefers-reduced-motion` media query to control the animation. 
+    // Add a class that defines the transition. Consider using
+    // `prefers-reduced-motion` media query to control the animation.
     // https://developers.google.com/web/updates/2019/03/prefers-reduced-motion
     portal.classList.add('portal-transition');
     portal.addEventListener('click', evt => {
@@ -69,7 +69,7 @@ class NotFoundPage extends React.Component {
       portal.classList.add('portal-reveal');
     });
     portal.addEventListener('transitionend', evt => {
-      if (evt.propertyName == 'transform') {
+      if (evt.propertyName === 'transform') {
         // Activate the portal once the transition has completed
         portal.activate();
       }

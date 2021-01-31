@@ -1,0 +1,35 @@
+.socials {
+  display: flex;
+}
+
+.socials a {
+  margin-right: 10px;
+}
+
+.socials a:hover {
+  opacity: 0.7;
+}
+
+.socials .fa-twitter {
+  color: #1da1f2;
+}
+
+.socials .fa-facebook {
+  color: #1877f2;
+}
+
+.socials .fa-instagram {
+  color: #c32aa3;
+}
+
+.socials .fa-youtube {
+  color: #ff0000;
+}
+
+.socials .fa-github {
+  color: #333;
+}
+
+.socials .fa-linkedin {
+  color: #0a66c2;
+}

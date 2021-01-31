@@ -10,7 +10,9 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+import defaultMeta from "../../static/images/meta.png"
+
+function SEO({ description, lang, meta, title, isBlogPost, metaImage }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +21,9 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            social {
+              twitter
+            }
           }
         }
       }
@@ -49,15 +54,21 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: !isBlogPost ? `website` : `article`,
         },
         {
+          property: `og:image`,
+          content: metaImage,
+        },
+
+        // TWITTER
+        {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.social.twitter,
         },
         {
           name: `twitter:title`,
@@ -66,6 +77,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: metaImage,
         },
       ].concat(meta)}
     />
@@ -76,6 +91,8 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  isBlogPost: false,
+  metaImage: defaultMeta,
 }
 
 SEO.propTypes = {
@@ -83,6 +100,8 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  isBlogPost: PropTypes.bool,
+  metaImage: PropTypes.string,
 }
 
 export default SEO

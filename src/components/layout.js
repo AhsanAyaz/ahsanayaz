@@ -1,10 +1,15 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Helmet from "react-helmet"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 
-function Layout({ location, title, children, slug  }) {
+function Layout({ location, title, children, slug }) {
+  const [smallScreen, setSmallScreen] = useState(null)
+
+  useEffect(() => {
+    setSmallScreen(window.screen.width < 1000)
+  })
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,7 +31,7 @@ function Layout({ location, title, children, slug  }) {
           ...scale(1.5),
           marginBottom: rhythm(1.5),
           marginTop: 0,
-          fontSize: 55 
+          fontSize: smallScreen ? 30 : 55,
         }}
       >
         <Link
@@ -80,7 +85,7 @@ function Layout({ location, title, children, slug  }) {
       </Helmet>
       <header>{header}</header>
       <main>{children}</main>
-      <footer style={{marginTop: rhythm(1)}}>
+      <footer style={{ marginTop: rhythm(1) }}>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>

@@ -66,19 +66,7 @@ module.exports = {
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          {
-            resolve: `gatsby-remark-social-cards`,
-            options: {
-              meta: {
-                parts: [
-                  "- ",
-                  { field: "author" },
-                  " » ",
-                  { field: "date", format: "mmmm dS" },
-                ],
-              },
-            },
-          },
+          `gatsby-plugin-social-preview`,
           {
             resolve: `gatsby-remark-vscode`,
             // All options are optional. Defaults shown here.
@@ -115,8 +103,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `ahsan.dev`,
-        short_name: `ahsan.dev`,
+        name: `ahsanayaz.com`,
+        short_name: `ahsanayaz.com`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#007acc`,
