@@ -3,6 +3,9 @@ const jimp = require("jimp")
 
 module.exports = ({ markdownNode }) => {
   const { frontmatter, fields } = markdownNode
+  if(!fields || !fields.slug) {
+    return Promise.resolve();
+  }
   const output = path.join("./public", fields.slug, "seo.jpg")
 
   return Promise.all([

@@ -9,7 +9,7 @@ function Layout({ location, title, children, slug }) {
 
   useEffect(() => {
     setSmallScreen(window.screen.width < 1000)
-  })
+  }, [])
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
