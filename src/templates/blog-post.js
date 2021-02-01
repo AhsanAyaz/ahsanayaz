@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -14,7 +15,7 @@ import Socials from "../components/socials/socials"
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
+    const post = this.props.data.mdx
     let featuredImgFluid = null
     if (post.frontmatter.featuredImage) {
       featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
@@ -64,7 +65,9 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date}
             </p>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <section>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </section>
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -141,10 +144,10 @@ export const pageQuery = graphql`
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       fields {
         slug
       }
