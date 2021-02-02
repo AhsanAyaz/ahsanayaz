@@ -8,7 +8,6 @@ tags:
   - angular
   - typescript
   - web development
-  - angular pipes
 ---
 
 Angular provides a lot of built-in pipes that are usually sufficient for our daily angular jobs. However, some times we find ourselves cornered and that may require us to write our own solutions. In such cases, we may start writing something from scratch. But why re-invent the wheel and not build on top of what Angular provides us already? In this article, we're going to extend an Angular pipe to fulfill our own needs.

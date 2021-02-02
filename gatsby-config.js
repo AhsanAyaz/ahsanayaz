@@ -116,7 +116,7 @@ module.exports = {
         short_name: `ahsanayaz.com`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#007acc`,
+        theme_color: `#5d1ad5`,
         display: `minimal-ui`,
         icon: `content/assets/site_icon.png`,
         gcm_sender_id: "716764804082",

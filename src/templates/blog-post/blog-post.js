@@ -1,17 +1,20 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import './blog-post.css'
+import Bio from "../../components/bio"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import { rhythm, scale } from "../../utils/typography"
 import Img from "gatsby-image"
 import { ShareBlockStandard } from "react-custom-share"
-import { BLOG_SHARE_BUTTONS_CONTENT } from "../constants/blog-share-buttons-content"
+import { BLOG_SHARE_BUTTONS_CONTENT } from "../../constants/blog-share-buttons-content"
 import { Disqus } from "gatsby-plugin-disqus"
-import { DISQUS_CONFIG } from "../constants/disqus-config"
-import Socials from "../components/socials/socials"
+import { DISQUS_CONFIG } from "../../constants/disqus-config"
+import Socials from "../../components/socials/socials"
+import Tags from "../../components/tags/tags"
+import { TAG_SIZE } from "../../constants/tag-size"
+
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -28,6 +31,8 @@ class BlogPostTemplate extends React.Component {
       title: post.frontmatter.title,
       location: this.props.location,
     })
+
+    const tags = post.frontmatter.tags.map(tag => ({ name: tag }))
 
     return (
       <Layout slug={slug} location={this.props.location} title={siteTitle}>
@@ -59,11 +64,14 @@ class BlogPostTemplate extends React.Component {
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
-                marginBottom: rhythm(1),
+                marginBottom: 0
               }}
             >
               {post.frontmatter.date}
             </p>
+            <div style={{ marginBottom: rhythm(1) }}>
+              <Tags size={TAG_SIZE.SMALL} tags={tags}/>
+            </div>
           </header>
           <section>
             <MDXRenderer>{post.body}</MDXRenderer>
@@ -155,6 +163,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 800) {

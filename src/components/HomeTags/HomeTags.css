@@ -1,0 +1,10 @@
+.home-tags {
+  text-align: center;
+  background: #fcf9f9;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.home-tags .tags {
+  justify-content: center;
+}
