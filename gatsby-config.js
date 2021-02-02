@@ -69,6 +69,14 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           {
+            resolve: 'gatsby-plugin-netlify',
+            options: {
+              allPageHeaders: [
+                'cache-control: public, max-age=0, must-revalidate'
+              ]
+            }
+          },
+          {
             resolve: path.join(__dirname + '/plugins/gatsby-plugin-social-preview')
           },
           {
