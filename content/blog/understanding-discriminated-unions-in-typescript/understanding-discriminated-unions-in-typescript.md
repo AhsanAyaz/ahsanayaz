@@ -5,7 +5,6 @@ author: Muhammad Ahsan Ayaz
 featuredImage: ../../assets/discriminated_unions.jpg
 description: This article explains what are Discriminated Unions in Typescript and how we can use them.
 tags:
-  - angular
   - typescript
   - web development
 ---

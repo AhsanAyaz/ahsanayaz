@@ -1,79 +1,27 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
-import Img from "gatsby-image"
+import HomeTags from "../components/HomeTags/HomeTags"
+import BlogPostItem from "../components/BlogPostItem/BlogPostItem"
 import { ShareBlockStandard } from "react-custom-share"
 import { HOME_SHARE_BUTTONS_CONTENT } from "../constants/home-share-buttons"
-import { initializeFirebase } from "../notifications/notifications"
 
-class BlogIndex extends React.Component {
-  componentDidMount() {
-    initializeFirebase()
-  }
+const BlogIndex = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata.title
+  const posts = data.allMdx.edges
 
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
-
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
-        <Bio />
-        {posts.map(({ node: post }) => {
-          const title = post.frontmatter.title || post.fields.slug
-          let featuredImgFluid = null
-          if (post.frontmatter.featuredImage) {
-            featuredImgFluid =
-              post.frontmatter.featuredImage.childImageSharp.fluid
-          }
-          return (
-            <article key={post.fields.slug}>
-              <header>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                {featuredImgFluid ? (
-                  <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
-                    <Img
-                      fluid={featuredImgFluid}
-                      style={{ marginBottom: rhythm(1 / 4) }}
-                    />
-                  </Link>
-                ) : null}
-                <small>{post.frontmatter.date}</small>
-              </header>
-              <section>
-                <Link
-                  style={{ boxShadow: `none`, color: "rgba(0, 0, 0, 0.9)" }}
-                  to={post.fields.slug}
-                >
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        (post.frontmatter.description || post.excerpt) +
-                        `... <span style="color: #007acc;">Read More</span>`,
-                    }}
-                  />
-                </Link>
-              </section>
-            </article>
-          )
-        })}
-        <ShareBlockStandard {...HOME_SHARE_BUTTONS_CONTENT} />
-      </Layout>
-    )
-  }
+  return (
+    <Layout location={location} title={siteTitle}>
+      <SEO title="All posts" />
+      <Bio />
+      <HomeTags />
+      {posts.map(({ node: post }) => <BlogPostItem post={post} key={post.fields.slug}/>)}
+      <ShareBlockStandard {...HOME_SHARE_BUTTONS_CONTENT} />
+    </Layout>
+  )
 }
 
 export default BlogIndex
@@ -99,6 +47,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 800) {

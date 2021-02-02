@@ -63,8 +63,7 @@ const Bio = () => {
           {author} is a Senior Software Engineer at{" "}
           <a href="https://klarna.com">Klarna</a> and a{" "}
           <a href={social.gdeProfile}>Google Developers Expert</a> in Angular &
-          Web Technologies. He teaches different technologies and builds quality
-          software to help make the world a better place.
+          Web Technologies.
         </div>
         <div style={{ marginTop: "10px" }}>
           <Socials />

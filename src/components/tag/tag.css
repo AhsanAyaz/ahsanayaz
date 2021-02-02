@@ -1,0 +1,25 @@
+.tag {
+  background-color: #5d1ad5;
+  color: white;
+  margin: 10px 10px 10px 0;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+}
+
+.tag:hover {
+  cursor: pointer;
+  opacity: 0.85;
+  color: white;
+  text-decoration: none;
+}
+
+.tag.tag_size_small {
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+
+.tag.tag_size_large {
+  font-size: 20px;
+}
