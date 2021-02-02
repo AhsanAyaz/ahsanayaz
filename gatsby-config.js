@@ -131,10 +131,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-sw",
-      options: {
-        swPath: "src/utils/app-service-worker.js",
-      },
+      resolve: "gatsby-plugin-offline",
     },
     `gatsby-plugin-react-helmet`,
     {
