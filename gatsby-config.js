@@ -79,7 +79,9 @@ module.exports = {
               wrapperClassName: "", // Additional class put on 'pre' tag
               injectStyles: true, // Injects (minimal) additional CSS for layout and scrolling
               extensions: [], // Extensions to download from the marketplace to provide more languages and themes
-              languageAliases: {}, // Map of custom/unknown language codes to standard/known language codes
+              languageAliases: {
+                dart: 'typescript'
+              }, // Map of custom/unknown language codes to standard/known language codes
               replaceColor: x => x, // Function allowing replacement of a theme color with another. Useful for replacing hex colors with CSS variables.
               getLineClassName: ({
                 // Function allowing dynamic setting of additional class names on individual lines

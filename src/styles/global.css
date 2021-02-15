@@ -1,7 +1,18 @@
-.vscode-highlight {
-  --vscode-highlight-line-highlighted-background-color: rgba(255, 255, 255, 0.2); /* default: transparent */
-  --vscode-highlight-line-highlighted-border-color: rgba(255, 255, 255, 0.5); /* default: transparent */
-  --vscode-highlight-line-highlighted-border-width: 2px; /* default: 2px */
+.grvsc-container {
+  padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+  padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+  border-radius: var(--grvsc-border-radius, 8px);
+}
+
+.grvsc-line {
+  padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+  padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+}
+
+/* See “Line Highlighting” section for details */
+.grvsc-line-highlighted {
+  background-color: var(--grvsc-line-highlighted-background-color, transparent);
+  box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, transparent);
 }
 
 html, body {

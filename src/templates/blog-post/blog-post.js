@@ -1,7 +1,8 @@
 import React from "react"
+import './blog-post.css'
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import './blog-post.css'
+import { MDXProvider } from '@mdx-js/react'
 import Bio from "../../components/bio"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -14,7 +15,13 @@ import { DISQUS_CONFIG } from "../../constants/disqus-config"
 import Socials from "../../components/socials/socials"
 import Tags from "../../components/tags/tags"
 import { TAG_SIZE } from "../../constants/tag-size"
+import IonicCourse from '../../components/IonicCourse/IonicCourse'
+import PromotionBanner from '../../components/PromotionBanner/PromotionBanner'
 
+const mdxShortCodes = {
+  IonicCourse,
+  PromotionBanner
+}
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -73,9 +80,11 @@ class BlogPostTemplate extends React.Component {
               <Tags size={TAG_SIZE.SMALL} tags={tags}/>
             </div>
           </header>
-          <section>
-            <MDXRenderer>{post.body}</MDXRenderer>
-          </section>
+          <main>
+            <MDXProvider components={ mdxShortCodes }>
+              <MDXRenderer>{post.body}</MDXRenderer>
+            </MDXProvider>
+          </main>
           <hr
             style={{
               marginBottom: rhythm(1),

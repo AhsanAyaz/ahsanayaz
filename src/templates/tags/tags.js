@@ -21,7 +21,11 @@ const Tags = ({ pageContext, data }) => {
     <Layout location={{pathName: `/tags/${tag}`}} title={siteTitle}>
       <SEO title={tag} />
       <Tag size={TAG_SIZE.LARGE} tag={{name: tag}}></Tag>
-      {posts.map(({ node: post }) => <BlogPostItem post={post} key={post.fields.slug}/>)}
+      <div style={{
+        marginBottom: 20
+      }}>
+        {posts.map(({ node: post }) => <BlogPostItem post={post} key={post.fields.slug}/>)}
+      </div>
       <ShareBlockStandard {...HOME_SHARE_BUTTONS_CONTENT} />
     </Layout>
   )
@@ -66,6 +70,7 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
+            draft
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
