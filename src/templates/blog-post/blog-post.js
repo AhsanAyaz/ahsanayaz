@@ -10,17 +10,17 @@ import { rhythm, scale } from "../../utils/typography"
 import Img from "gatsby-image"
 import { ShareBlockStandard } from "react-custom-share"
 import { BLOG_SHARE_BUTTONS_CONTENT } from "../../constants/blog-share-buttons-content"
-import { Disqus } from "gatsby-plugin-disqus"
-import { DISQUS_CONFIG } from "../../constants/disqus-config"
 import Socials from "../../components/socials/socials"
 import Tags from "../../components/tags/tags"
 import { TAG_SIZE } from "../../constants/tag-size"
 import IonicCourse from '../../components/IonicCourse/IonicCourse'
 import PromotionBanner from '../../components/PromotionBanner/PromotionBanner'
+import ImageWithBg from '../../components/ImageWithBg/ImageWithBg'
 
 const mdxShortCodes = {
   IonicCourse,
-  PromotionBanner
+  PromotionBanner,
+  ImageWithBg
 }
 
 class BlogPostTemplate extends React.Component {
@@ -33,11 +33,6 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next, slug } = this.props.pageContext
     const metaImage = `${slug}seo.jpg`
-
-    const disqusConfig = DISQUS_CONFIG({
-      title: post.frontmatter.title,
-      location: this.props.location,
-    })
 
     const tags = post.frontmatter.tags.map(tag => ({ name: tag }))
 
@@ -115,7 +110,6 @@ class BlogPostTemplate extends React.Component {
           />
           {/* Post contents */}
           <footer>
-            <Disqus config={disqusConfig} />
             <Bio />
           </footer>
         </article>

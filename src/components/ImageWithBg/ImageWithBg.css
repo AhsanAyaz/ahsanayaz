@@ -1,0 +1,7 @@
+.image-with-bg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  border-radius: var(--grvsc-border-radius, 8px);
+}
