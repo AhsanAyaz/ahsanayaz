@@ -4,7 +4,6 @@ date: 2021-02-14 18:00:00
 featuredImage: ../../assets/the-most-easy-way-to-add-update-and-delete-contacts-in-flutter.png
 author: Muhammad Ahsan Ayaz
 description:  In this article, you'll learn the most easy ways to add, update and delete a contact in a Flutter application.
-draft: true
 tags:
   - flutter
   - dart
@@ -44,6 +43,13 @@ Great! Open the project in your favorite editor now. I mainly use [Android Studi
 📲 Once you've opened the code, run the app on either Android or iOS simulator. For this example, I'm going to use Android.
 [Follow the instructions](https://flutter.dev/docs/get-started/test-drive) to run the app on your simulator based on your IDE/environment.
 
+<hr/>
+
+<PromotionBanner title={'Would rather see a video tutorial? I got you covered 👌<br/>Watch it below 👇'}/>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qC90U1rdgHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<hr/>
 
 ## Adding a Contact
 Let's add a floating button in our Flutter app that we'll use to add a new contact. To do so, update the `main.dart` file's `build()` method as follows:
@@ -377,6 +383,8 @@ To do this, we need to do the following:
 - From the `onContactUpdate` callback, we need to somehow reload all contacts (executing some callback in the `main.dart`).
 - In order to achieve the approach in step `2.`, we need to create an input method in the `ContactsList` widget named `reloadContacts()` that we can pass a callback from the `main.dart`.
 
+<hr />
+
 First, go to the `contact-details.dart` file and call the `onContactUpdate()` method as follows:
 ```dart{16}
 ...
@@ -495,8 +503,10 @@ you immediately see the change in the `ContactDetails` page widget. As well as o
 
 ## Deleting a Contact
 
-Deleting data of any sort is no joke. We have to be sure that the user wants to delete the contact. And to do this, we'll implement a confirmation dialog
-using the `AlertDialog` widget. Go to the `contact-details.dart` and create a new method named `showDeleteConfirmation()`. Your code should look as follows:
+Deleting data of any sort is no joke. We have to be sure that the user wants to delete the contact. We'll implement a confirmation dialog
+using the `AlertDialog` widget.
+
+Go to the `contact-details.dart` and create a new method named `showDeleteConfirmation()`. Your code should look as follows:
 
 ```dart{10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 47}
 ...
@@ -560,12 +570,14 @@ After you've implemented the above code, you should see the `AlertDialog` when y
 
 <ImageWithBg src="/flutter-contacts-list/delete-contact.png" imageHeight={400}/>
 
-Finally, we'd like to do the following once the tapping the `Delete` option:
+Finally, we'd like to do the following on the tapping the `Delete` option:
 
 - Delete the contact using the `ContactService`'s `deleteContact()` method.
 - Dismiss the `AlertDialog` widget.
 - Navigate from the `ContactDetails` page back to the `ContactsList` (Home) page.
 - Reload the contacts which should remove the deleted contacts from the list.
+
+<hr />
 
 Alright, let's do it! First, update the `contact-details.dart` as follows:
 
