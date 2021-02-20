@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path")
 module.exports = {
   siteMetadata: {
     title: `ahsanayaz.com`,
@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: ['.md', '.mdx'],
+        extensions: [".md", ".mdx"],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -63,29 +63,12 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           {
-            resolve: path.join(__dirname + '/plugins/gatsby-plugin-social-preview')
+            resolve: path.join(
+              __dirname + "/plugins/gatsby-plugin-social-preview"
+            ),
           },
           {
-            resolve: `gatsby-remark-vscode`,
-            // All options are optional. Defaults shown here.
-            options: {
-              colorTheme: "Dark+ (default dark)", // Read on for list of included themes. Also accepts object and function forms.
-              wrapperClassName: "", // Additional class put on 'pre' tag
-              injectStyles: true, // Injects (minimal) additional CSS for layout and scrolling
-              extensions: [], // Extensions to download from the marketplace to provide more languages and themes
-              languageAliases: {
-                dart: 'typescript'
-              }, // Map of custom/unknown language codes to standard/known language codes
-              replaceColor: x => x, // Function allowing replacement of a theme color with another. Useful for replacing hex colors with CSS variables.
-              getLineClassName: ({
-                // Function allowing dynamic setting of additional class names on individual lines
-                content, //   - the string content of the line
-                index, //   - the zero-based index of the line within the code fence
-                language, //   - the language specified for the code fence
-                codeFenceOptions, //   - any options set on the code fence alongside the language (more on this later)
-              }) => "",
-              logLevel: "error", // Set to 'warn' to debug if something looks wrong
-            },
+            resolve: `gatsby-remark-highlight-code`
           },
         ],
       },
@@ -93,9 +76,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-plugin-draft',
+      resolve: "gatsby-plugin-draft",
       options: {
-        nodeType: 'Mdx',
+        nodeType: "Mdx",
       },
     },
     {
