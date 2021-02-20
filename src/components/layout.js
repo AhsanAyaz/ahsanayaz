@@ -3,6 +3,9 @@ import Helmet from "react-helmet"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+
+deckDeckGoHighlightElement();
 
 function Layout({ location, title, children, slug }) {
   const [smallScreen, setSmallScreen] = useState(null)

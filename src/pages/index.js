@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,8 +7,6 @@ import HomeTags from "../components/HomeTags/HomeTags"
 import BlogPostItem from "../components/BlogPostItem/BlogPostItem"
 import { ShareBlockStandard } from "react-custom-share"
 import { HOME_SHARE_BUTTONS_CONTENT } from "../constants/home-share-buttons"
-
-deckDeckGoHighlightElement();
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
