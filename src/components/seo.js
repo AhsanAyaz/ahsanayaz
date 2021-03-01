@@ -83,7 +83,7 @@ function SEO({ description, lang, meta, title, isBlogPost, metaImage }) {
           content: metaImage,
         },
       ].concat(meta)}
-    />
+    ></Helmet>
   )
 }
 

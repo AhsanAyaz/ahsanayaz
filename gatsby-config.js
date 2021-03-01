@@ -1,4 +1,9 @@
 const path = require("path")
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `ahsanayaz.com`,
@@ -44,6 +49,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint: process.env.MAILCHIMP_ENDPOINT,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".md", ".mdx"],
@@ -68,10 +79,13 @@ module.exports = {
             ),
           },
           {
-            resolve: `gatsby-remark-highlight-code`
+            resolve: `gatsby-remark-highlight-code`,
           },
         ],
       },
+    },
+    {
+      resolve: "gatsby-plugin-sass",
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
