@@ -3,9 +3,18 @@ import Helmet from "react-helmet"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
+import SubscriptionForm from "./SubscriptionForm/SubscriptionForm"
 
-deckDeckGoHighlightElement();
+deckDeckGoHighlightElement()
+
+const layoutCenterStyle = {
+  marginLeft: `auto`,
+  marginRight: `auto`,
+  maxWidth: rhythm(24),
+  position: "relative",
+  padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+}
 
 function Layout({ location, title, children, slug }) {
   const [smallScreen, setSmallScreen] = useState(null)
@@ -30,6 +39,7 @@ function Layout({ location, title, children, slug }) {
   if (location.pathname === rootPath) {
     header = (
       <h1
+        className="logo-header"
         style={{
           ...scale(1.5),
           marginBottom: rhythm(1.5),
@@ -52,8 +62,8 @@ function Layout({ location, title, children, slug }) {
   } else {
     header = (
       <h3
+        className="logo-header"
         style={{
-          fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
         }}
       >
@@ -71,14 +81,7 @@ function Layout({ location, title, children, slug }) {
     )
   }
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
+    <div>
       <Helmet title={data.site.siteMetadata.title}>
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -86,12 +89,12 @@ function Layout({ location, title, children, slug }) {
           content={`${data.site.siteMetadata.siteUrl}${slug}twitter-card.jpg`}
         />
       </Helmet>
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer style={{ marginTop: rhythm(1) }}>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <header style={layoutCenterStyle}>{header}</header>
+      <main style={layoutCenterStyle}>{children}</main>
+      <footer className="footer" style={{ marginTop: rhythm(1.5) }}>
+        <div className="footer__content" style={layoutCenterStyle}>
+          <SubscriptionForm />
+        </div>
       </footer>
     </div>
   )

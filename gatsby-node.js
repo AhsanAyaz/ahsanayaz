@@ -1,5 +1,5 @@
 const path = require(`path`)
-const { kebabCase } = require('lodash')
+const { kebabCase } = require("lodash")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions }) => {
