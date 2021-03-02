@@ -5,6 +5,10 @@
   padding: 20px;
 }
 
+.home-tags__heading {
+  text-align: center;
+}
+
 .home-tags .tags {
   justify-content: center;
 }

@@ -1,8 +1,8 @@
 import React from "react"
-import './blog-post.css'
+import "./blog-post.css"
 import { Link, graphql } from "gatsby"
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXProvider } from "@mdx-js/react"
 import Bio from "../../components/bio"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -10,17 +10,16 @@ import { rhythm, scale } from "../../utils/typography"
 import Img from "gatsby-image"
 import { ShareBlockStandard } from "react-custom-share"
 import { BLOG_SHARE_BUTTONS_CONTENT } from "../../constants/blog-share-buttons-content"
-import Socials from "../../components/socials/socials"
 import Tags from "../../components/tags/tags"
 import { TAG_SIZE } from "../../constants/tag-size"
-import IonicCourse from '../../components/IonicCourse/IonicCourse'
-import PromotionBanner from '../../components/PromotionBanner/PromotionBanner'
-import ImageWithBg from '../../components/ImageWithBg/ImageWithBg'
+import IonicCourse from "../../components/IonicCourse/IonicCourse"
+import PromotionBanner from "../../components/PromotionBanner/PromotionBanner"
+import ImageWithBg from "../../components/ImageWithBg/ImageWithBg"
 
 const mdxShortCodes = {
   IonicCourse,
   PromotionBanner,
-  ImageWithBg
+  ImageWithBg,
 }
 
 class BlogPostTemplate extends React.Component {
@@ -66,29 +65,20 @@ class BlogPostTemplate extends React.Component {
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
-                marginBottom: 0
+                marginBottom: 0,
               }}
             >
               {post.frontmatter.date}
             </p>
             <div style={{ marginBottom: rhythm(1) }}>
-              <Tags size={TAG_SIZE.SMALL} tags={tags}/>
+              <Tags size={TAG_SIZE.SMALL} tags={tags} />
             </div>
           </header>
           <main>
-            <MDXProvider components={ mdxShortCodes }>
+            <MDXProvider components={mdxShortCodes}>
               <MDXRenderer>{post.body}</MDXRenderer>
             </MDXProvider>
           </main>
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
-          <section>
-            <h4>Socials</h4>
-            <Socials size={24} />
-          </section>
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -109,9 +99,6 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           {/* Post contents */}
-          <footer>
-            <Bio />
-          </footer>
         </article>
 
         <nav>

@@ -36,6 +36,7 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
   return (
     <div
+      className="bio"
       style={{
         display: `flex`,
         marginBottom: rhythm(2.5),
@@ -44,6 +45,7 @@ const Bio = () => {
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
+        className="bio__img"
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
@@ -66,7 +68,7 @@ const Bio = () => {
           Web Technologies.
         </div>
         <div style={{ marginTop: "10px" }}>
-          <Socials />
+          <Socials size={24} />
         </div>
       </div>
     </div>

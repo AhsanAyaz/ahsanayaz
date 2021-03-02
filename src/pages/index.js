@@ -15,12 +15,11 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
-      <HomeTags />
       {posts.map(({ node: post }) => (
         <BlogPostItem post={post} key={post.fields.slug} />
       ))}
       <ShareBlockStandard {...HOME_SHARE_BUTTONS_CONTENT} />
+      <HomeTags />
     </Layout>
   )
 }

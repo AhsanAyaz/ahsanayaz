@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader"
 import SubscriptionForm from "./SubscriptionForm/SubscriptionForm"
+import Bio from "./bio"
 
 deckDeckGoHighlightElement()
 
@@ -14,6 +15,15 @@ const layoutCenterStyle = {
   maxWidth: rhythm(24),
   position: "relative",
   padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+}
+
+const headerStyle = {
+  ...layoutCenterStyle,
+  paddingBottom: 0,
+}
+const mainStyle = {
+  ...layoutCenterStyle,
+  paddingTop: 0,
 }
 
 function Layout({ location, title, children, slug }) {
@@ -42,7 +52,6 @@ function Layout({ location, title, children, slug }) {
         className="logo-header"
         style={{
           ...scale(1.5),
-          marginBottom: rhythm(1.5),
           marginTop: 0,
           fontSize: smallScreen ? 30 : 55,
         }}
@@ -89,13 +98,23 @@ function Layout({ location, title, children, slug }) {
           content={`${data.site.siteMetadata.siteUrl}${slug}twitter-card.jpg`}
         />
       </Helmet>
-      <header style={layoutCenterStyle}>{header}</header>
-      <main style={layoutCenterStyle}>{children}</main>
-      <footer className="footer" style={{ marginTop: rhythm(1.5) }}>
-        <div className="footer__content" style={layoutCenterStyle}>
+      <header style={headerStyle}>{header}</header>
+      <main style={mainStyle}>{children}</main>
+      <section className="sub-container" style={{ marginTop: rhythm(1.5) }}>
+        <div className="sub-container__content" style={layoutCenterStyle}>
           <SubscriptionForm />
         </div>
-      </footer>
+      </section>
+      <section
+        style={{
+          ...layoutCenterStyle,
+          marginTop: rhythm(1.5),
+          padding: rhythm(1),
+        }}
+        className="bio-container"
+      >
+        <Bio />
+      </section>
     </div>
   )
 }
