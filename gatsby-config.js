@@ -29,6 +29,7 @@ module.exports = {
         name: `blog`,
       },
     },
+    "gatsby-plugin-offline",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -113,12 +114,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: `content/assets/site_icon.png`,
         gcm_sender_id: "716764804082",
-      },
-    },
-    {
-      resolve: "gatsby-plugin-sw",
-      options: {
-        swPath: "src/utils/app-service-worker.js",
       },
     },
     `gatsby-plugin-react-helmet`,
