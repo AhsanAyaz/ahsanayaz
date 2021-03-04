@@ -117,12 +117,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: "ca-pub-2995943378218316",
-      },
-    },
     `gatsby-plugin-zopfli`,
     `gatsby-plugin-advanced-sitemap`,
   ],
