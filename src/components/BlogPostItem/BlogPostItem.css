@@ -1,0 +1,28 @@
+.image-link {
+  margin-top: -20px;
+}
+
+.image-link span {
+  opacity: 0;
+}
+
+.image-link a {
+  outline: none; /* prevents dotted line when link is active */
+}
+
+.blog-header {
+  margin-top: 3.5rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.75rem;
+  color: inherit;
+  font-family: "Merriweather", "Georgia", serif;
+  font-weight: 900;
+  text-rendering: optimizeLegibility;
+  font-size: 1.4427rem;
+  line-height: 1.1;
+}

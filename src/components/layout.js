@@ -48,7 +48,7 @@ function Layout({ location, title, children, slug }) {
 
   if (location.pathname === rootPath) {
     header = (
-      <h1
+      <div
         className="logo-header"
         style={{
           ...scale(1.5),
@@ -66,13 +66,14 @@ function Layout({ location, title, children, slug }) {
         >
           {title}
         </Link>
-      </h1>
+      </div>
     )
   } else {
     header = (
-      <h3
+      <div
         className="logo-header"
         style={{
+          ...scale(0.7),
           marginTop: 0,
         }}
       >
@@ -86,7 +87,7 @@ function Layout({ location, title, children, slug }) {
         >
           {title}
         </Link>
-      </h3>
+      </div>
     )
   }
   return (

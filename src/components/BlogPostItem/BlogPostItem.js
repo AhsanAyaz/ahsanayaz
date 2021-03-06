@@ -1,22 +1,23 @@
-import React from 'react'
+import React from "react"
 import { rhythm } from "../../utils/typography"
 import { Link } from "gatsby"
 
 import Img from "gatsby-image"
-import Tags from '../tags/tags'
-import { TAG_SIZE } from '../../constants/tag-size'
-const BlogPostItem = ({post}) => {
+import Tags from "../tags/tags"
+import { TAG_SIZE } from "../../constants/tag-size"
+import "./BlogPostItem.css"
+const BlogPostItem = ({ post }) => {
   const title = post.frontmatter.title || post.fields.slug
   let featuredImgFluid = null
   if (post.frontmatter.featuredImage) {
-    featuredImgFluid =
-      post.frontmatter.featuredImage.childImageSharp.fluid
+    featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
   }
   const { tags } = post.frontmatter
   return (
     <article key={post.fields.slug}>
       <header>
-        <h3
+        <div
+          className="blog-header"
           style={{
             marginBottom: rhythm(1 / 4),
           }}
@@ -24,14 +25,18 @@ const BlogPostItem = ({post}) => {
           <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
             {title}
           </Link>
-        </h3>
+        </div>
         {featuredImgFluid ? (
-          <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
-            <Img
-              fluid={featuredImgFluid}
-              style={{ marginBottom: rhythm(1 / 4) }}
-            />
-          </Link>
+          <div className="image-link">
+            <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
+              <span>{title}</span>
+              <Img
+                alt={title}
+                fluid={featuredImgFluid}
+                style={{ marginBottom: rhythm(1 / 4) }}
+              />
+            </Link>
+          </div>
         ) : null}
         <small>{post.frontmatter.date}</small>
       </header>
@@ -42,7 +47,7 @@ const BlogPostItem = ({post}) => {
         >
           <p
             style={{
-              marginBottom: 0
+              marginBottom: 0,
             }}
             dangerouslySetInnerHTML={{
               __html:
@@ -52,7 +57,10 @@ const BlogPostItem = ({post}) => {
           />
         </Link>
         <div style={{ marginBottom: rhythm(1) }}>
-          <Tags size={TAG_SIZE.SMALL} tags={tags.map(tag => ({ name: tag }))}></Tags>
+          <Tags
+            size={TAG_SIZE.SMALL}
+            tags={tags.map(tag => ({ name: tag }))}
+          ></Tags>
         </div>
       </section>
     </article>

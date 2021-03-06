@@ -2,11 +2,12 @@
   display: flex;
 }
 
-.socials a {
+.socials [class^="fa-"] {
   margin-right: 10px;
+  cursor: pointer;
 }
 
-.socials a:hover {
+.socials [class^="fa-"]:hover {
   opacity: 0.7;
 }
 

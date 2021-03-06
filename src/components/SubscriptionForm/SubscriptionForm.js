@@ -51,7 +51,7 @@ const SubscriptionForm = () => {
         </div>
       )}
       <form onSubmit={_handleSubmit} noValidate>
-        <div class="sub-form__main">
+        <div className="sub-form__main">
           <h4 className="sub-form__main__heading" htmlFor="mce-EMAIL">
             Join the Newsletter
           </h4>

@@ -36,9 +36,53 @@ const Socials = ({ size = 20 }) => {
   `)
 
   const { social } = data.site.siteMetadata
+  const socials = [
+    {
+      link: `https://twitter.com/${social.twitter}`,
+      class: "fa-twitter",
+      component: FaTwitter,
+    },
+    {
+      link: `https://facebook.com/${social.facebook}`,
+      class: "fa-facebook",
+      component: FaFacebook,
+    },
+    {
+      link: `https://instagram.com/${social.instagram}`,
+      class: "fa-instagram",
+      component: FaInstagram,
+    },
+    {
+      link: `https://github.com/${social.github}`,
+      class: "fa-github",
+      component: FaGithub,
+    },
+    {
+      link: `https://linkedin.com/${social.linkedin}`,
+      class: "fa-linkedin",
+      component: FaLinkedin,
+    },
+    {
+      link: `https://youtube.com/channel/${social.youtube}`,
+      class: "fa-youtube",
+      component: FaYoutube,
+    },
+  ]
+  const openSocial = social => {
+    window.open(social.link, "_blank")
+  }
   return (
     <div className="socials">
-      <a
+      {socials.map(social => (
+        <div
+          key={social.link}
+          className={social.class}
+          onClick={() => openSocial(social)}
+        >
+          <social.component size={size} />
+        </div>
+      ))}
+      {/* <a
         className="fa-twitter"
         target="_blank"
         rel="noopener noreferrer"
@@ -72,7 +116,7 @@ const Socials = ({ size = 20 }) => {
         href={`https://youtube.com/channel/${social.youtube}`}
       >
         <FaYoutube size={size} />
-      </a>
+      </a> */}
     </div>
   )
 }
