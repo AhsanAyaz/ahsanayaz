@@ -11,15 +11,7 @@ import { ShareBlockStandard } from "react-custom-share"
 import { BLOG_SHARE_BUTTONS_CONTENT } from "../../constants/blog-share-buttons-content"
 import Tags from "../../components/tags/tags"
 import { TAG_SIZE } from "../../constants/tag-size"
-import IonicCourse from "../../components/IonicCourse/IonicCourse"
-import PromotionBanner from "../../components/PromotionBanner/PromotionBanner"
-import ImageWithBg from "../../components/ImageWithBg/ImageWithBg"
-
-const mdxShortCodes = {
-  IonicCourse,
-  PromotionBanner,
-  ImageWithBg,
-}
+import shortCodes from "../../constants/short-codes"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -74,7 +66,7 @@ class BlogPostTemplate extends React.Component {
             </div>
           </header>
           <main>
-            <MDXProvider components={mdxShortCodes}>
+            <MDXProvider components={shortCodes}>
               <MDXRenderer>{post.body}</MDXRenderer>
             </MDXProvider>
           </main>
