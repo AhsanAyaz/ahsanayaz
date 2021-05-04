@@ -114,7 +114,7 @@ function Layout({ location, title, children, slug }) {
         }}
         className="bio-container"
       >
-        <Bio />
+        <Bio showBMAC={true} />
       </section>
     </div>
   )

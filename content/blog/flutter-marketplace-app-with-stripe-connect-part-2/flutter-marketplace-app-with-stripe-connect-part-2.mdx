@@ -1,0 +1,84 @@
+---
+title: Flutter Marketplace app with Stripe Connect - Part 2/3
+date: 2021-05-02 00:00:00
+author: Muhammad Ahsan Ayaz
+draft: true
+description:
+  In this tutorial, you'll learn how to configure Payments using Stripe Connect
+  for a marketplace app built with Flutter. Specifically in Part 1, we're going
+  to cover Stripe configuration and Seller Registration
+tags:
+  - flutter
+  - stripe
+---
+
+<header>
+  In this article, you'll learn how to configure Payments using Stripe Connect
+  for a marketplace app built with Flutter. I'll also be working on a hands-on
+  video tutorial as well. This is for those of you who love reading and
+  following articles more. Following are the links to the code for the flutter
+  app and the stripe backend:&nbsp;
+  <a href="https://github.com/ahsanayaz/flutter_stripe_connect">
+    Flutter Stripe Connect App
+  </a>
+  {", "}
+  <a href="https://github.com/AhsanAyaz/stripe-connect-backend">
+    Stripe Connect Backend
+  </a>
+</header>
+
+### Implementing Deep Links in the Flutter app
+
+To be able to get back from the Browser (Connect Onboarding Flow) to the Flutter
+app, we need to implement Flutter Deep Links. You can read more about them on
+the Flutter Deeplinking docs. To keep this tutorial short, we're going to
+implement Custom URL Scheme for our Flutter app. This scheme is the same scheme
+we tend to navigate to when clicking the **Continue to App** button on the
+Connect Onboarding redirect page. As shown in Figure 1.12.
+
+Open the file `android/app/src/main/AndroidManifest.xml` and update it as
+follows:
+
+```dart{8,22-28}
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.flutter_stripe_connect">
+    <queries>
+        ...
+    </queries>
+   <application
+        android:label="flutter_stripe_connect"
+        android:usesCleartextTraffic="true"
+        android:icon="@mipmap/ic_launcher">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            ...
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="pandagums" />
+            </intent-filter>
+        </activity>
+        ...
+    </application>
+</manifest>
+```
+
+> Note: After the above change, the app needs a full restart. Restart the app
+> before proceeding with further steps.
+
+## Conclusion
+
+Go through different articles/sources while implementing a solution 😄. <br/> If
+you liked the article, considering subscribing to the newsletter for more. And
+share this article on your social links with 🖤. And as always, Happy Coding! 🙌🏼

@@ -6,6 +6,17 @@
   flex-direction: column;
   align-items: center;
 }
+
+.bio-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bio-secondary img {
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 600px) {
   .bio {
     text-align: center;
@@ -17,5 +28,8 @@
       margin-top: 10px;
       justify-content: center;
     }
+  }
+  .bio-secondary {
+    flex-direction: column;
   }
 }

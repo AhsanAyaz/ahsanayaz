@@ -1,7 +1,13 @@
 .image-with-bg {
   width: 100%;
+  flex-direction: column;
   display: flex;
-  justify-content: center;
+  align-items: center;
   padding: 8px 0;
   border-radius: var(--grvsc-border-radius, 8px);
+}
+
+.image-with-bg .caption {
+  margin: 6px auto 10px auto;
+  text-align: center;
 }

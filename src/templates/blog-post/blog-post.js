@@ -12,6 +12,7 @@ import { BLOG_SHARE_BUTTONS_CONTENT } from "../../constants/blog-share-buttons-c
 import Tags from "../../components/tags/tags"
 import { TAG_SIZE } from "../../constants/tag-size"
 import shortCodes from "../../constants/short-codes"
+import Support from "../../components/Support/Support"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -70,6 +71,7 @@ class BlogPostTemplate extends React.Component {
               <MDXRenderer>{post.body}</MDXRenderer>
             </MDXProvider>
           </main>
+          <Support />
           <hr
             style={{
               marginBottom: rhythm(1),

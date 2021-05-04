@@ -82,41 +82,6 @@ const Socials = ({ size = 20 }) => {
           <social.component size={size} />
         </div>
       ))}
-      {/* <a
-        className="fa-twitter"
-        target="_blank"
-        rel="noopener noreferrer"
-        href={`https://twitter.com/${social.twitter}`}
-      >
-        <FaTwitter size={size} />
-      </a>
-      <a
-        className="fa-facebook"
-        href={`https://facebook.com/${social.facebook}`}
-      >
-        <FaFacebook size={size} />
-      </a>
-      <a
-        className="fa-instagram"
-        href={`https://instagram.com/${social.instagram}`}
-      >
-        <FaInstagram size={size} />
-      </a>
-      <a className="fa-github" href={`https://github.com/${social.github}`}>
-        <FaGithub size={size} />
-      </a>
-      <a
-        className="fa-linkedin"
-        href={`https://linkedin.com/${social.linkedin}`}
-      >
-        <FaLinkedin size={size} />
-      </a>
-      <a
-        className="fa-youtube"
-        href={`https://youtube.com/channel/${social.youtube}`}
-      >
-        <FaYoutube size={size} />
-      </a> */}
     </div>
   )
 }

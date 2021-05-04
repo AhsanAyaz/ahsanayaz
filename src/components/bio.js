@@ -12,7 +12,7 @@ import Image from "gatsby-image"
 import { rhythm } from "../utils/typography"
 import Socials from "./socials/socials"
 
-const Bio = () => {
+const Bio = (showBMAC = false) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile_pic.png/" }) {
@@ -67,8 +67,23 @@ const Bio = () => {
           <a href={social.gdeProfile}>Google Developers Expert</a> in Angular &
           Web Technologies.
         </div>
-        <div style={{ marginTop: "10px" }}>
-          <Socials size={24} />
+        <div className="bio-secondary" style={{ marginTop: "10px" }}>
+          <div>
+            <Socials size={24} />
+          </div>
+          {showBMAC ? (
+            <div>
+              <a
+                title="Like Ahsan's work? Buy him a coffee"
+                className="bmac"
+                target="_blank"
+                rel="noopener noreferer"
+                href="https://www.buymeacoffee.com/muhd.ahsanayaz"
+              >
+                <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=muhd.ahsanayaz&button_colour=BD5FFF&font_colour=ffffff&font_family=Comic&outline_colour=000000&coffee_colour=FFDD00" />
+              </a>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
