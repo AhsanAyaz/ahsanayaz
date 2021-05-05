@@ -83,7 +83,13 @@ function SEO({ description, lang, meta, title, isBlogPost, metaImage }) {
           content: metaImage,
         },
       ].concat(meta)}
-    ></Helmet>
+    >
+      <script
+        data-ad-client="ca-pub-2995943378218316"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      ></script>
+    </Helmet>
   )
 }
 
