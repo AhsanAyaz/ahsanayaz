@@ -41,8 +41,8 @@ First of all, log into your Stripe account. Once logged in, go to the
 [Stripe Dashboard](https://dashboard.stripe.com/dashboard). From the left nav
 items, click **View test data** to make sure we're viewing the Dashboard in
 **Test Mode** as shown in [Figure 1.1](#figure-1.1). This is important so we can
-build the app in and make some test transactions without having to actually pay
-anything.
+build the app in Test Mode, and make some test transactions without having to
+actually pay anything.
 
 <ImageWithBg
   title="View test data in stripe dashboard"
@@ -257,7 +257,7 @@ should be able to see the app running as shown in [Figure 1.7](#figure-1.7).
 As you can see in [Figure 1.7](#figure-1.7), we have a marketplace app named
 **Panda Gums**. There will be Merchants/Sellers registered within this
 marketplace. And there will be Customers paying for products from these sellers.
-In this tutorial, we'll only focus on registering Sellers/Merchants in the app.
+In this part, we'll only focus on registering Sellers/Merchants in the app.
 
 <div id="understanding-seller-registration-via-stripe-connect-onboarding" />
 
@@ -305,23 +305,23 @@ Essentially, the steps are as follows:
    [NodeJS Backend](https://github.com/AhsanAyaz/stripe-connect-backend/blob/main/pages/api/stripe/account/index.js#L14)
    for when we create the Account Link. And that's basically a web page served
    by our backend itself.
-8. The web page we land on in Step 7 contains a button that says 'Continue in
-   App'. We click it and that deep links into our Flutter app to open a new app
+8. The web page we land on in Step 7 contains a button that says **Continue in
+   App**. We click it and that deep links into our Flutter app to open a new app
    page containing the success message.
 
 ## Let's write some Code, Yeah?
 
 ### Seller registration flow
 
-Now that we understand how the Seller's Registration flow works for our
-tutorial, let's jump into the code. We'll begin with creating a Service in our
-Flutter application to communicate with the NodeJS backend.
+Now that we understand how the Seller's Registration flow works, let's jump into
+the code. We'll begin with creating a Service in our Flutter application to
+communicate with the NodeJS backend.
 
 In the Flutter app project, create a new folder inside the `lib` folder named
 `services`. If you're using Android Studio, you can right click on the `lib`
-folder, hover on `New`, and click on `Package` to create the folder. Inside the
-folder, create a file named `stripe-backend-service.dart` and add the following
-code:
+folder, hover on the option `New`, and click on `Package` to create the folder.
+Inside the folder, create a file named `stripe-backend-service.dart` and add the
+following code:
 
 ```dart
 // lib/services/stripe-backend-service.dart
@@ -365,8 +365,8 @@ class StripeBackendService {
 
 #### Installing and configuring url_launcher
 
-Now install the [url_launcher](https://pub.dev/packages/url_launcher) package in
-the flutter app project by running the following command in the project root:
+Install the [url_launcher](https://pub.dev/packages/url_launcher) package in the
+flutter app project by running the following command in the project root:
 
 ```bash
 flutter pub add url_launcher
@@ -463,8 +463,9 @@ class _RegisterSellerState extends State<RegisterSeller> {
 ```
 
 The preceding change ultimately results in calling our Backend API and recieving
-the Account Lik URl. Notice that we call the method `canLaunch()` and `launch()`
-from the `url_launcher` package using the `response.url` property.
+the Account Link URL. Notice that we call the methods `canLaunch()` and
+`launch()` from the `url_launcher` package. And we provide `response.url` to
+these methods to identify if our app can open the link in the browser .
 
 If you go to the
 [Connected Accounts page](https://dashboard.stripe.com/test/connect/accounts/overview)
