@@ -3,7 +3,9 @@ title: The MOST EASY WAY to Add, Update and Delete contacts in Flutter
 date: 2021-02-14 18:00:00
 featuredImage: ../../assets/the-most-easy-way-to-add-update-and-delete-contacts-in-flutter.png
 author: Muhammad Ahsan Ayaz
-description:  In this article, you'll learn the most easy ways to add, update and delete a contact in a Flutter application.
+description:
+  In this article, you'll learn the most easy ways to add, update and delete a
+  contact in a Flutter application.
 tags:
   - flutter
   - dart
@@ -11,48 +13,68 @@ tags:
 ---
 
 <IonicCourse />
-
 <header>
-  In this article, you'll learn the most easiest ways to implement Adding, Updating and Deleting contacts in a Flutter app.
-  And we'll do it using the <a href="https://pub.dev/packages/contacts_service" target="_blank" rel="noopener noreferrer">ContactsService</a> Flutter package.
-  So hold your horses, and hang tight!
+  In this article, you'll learn the most easiest ways to implement Adding,
+  Updating and Deleting contacts in a Flutter app. And we'll do it using the{" "}
+  <a
+    href="https://pub.dev/packages/contacts_service"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    ContactsService
+  </a>{" "}
+  Flutter package. So hold your horses, and hang tight!
 </header>
 
 ## Prerequisites
-In order to follow this article, you need to be familiar with [Flutter](https://flutter.dev/). I.e. should have the basic understanding of how
-Flutter works. You should also have the tooling set up for developing for either Android or iOS. See the [Get started](https://flutter.dev/docs/get-started/install) section on the official docs.
 
+In order to follow this article, you need to be familiar with
+[Flutter](https://flutter.dev/). I.e. should have the basic understanding of how
+Flutter works. You should also have the tooling set up for developing for either
+Android or iOS. See the
+[Get started](https://flutter.dev/docs/get-started/install) section on the
+official docs.
 
 ## Let the game begin
 
-First of all, you have to clone the GitHub repository for the project.
-So open your terminal/command prompt and run the following command
+First of all, you have to clone the GitHub repository for the project. So open
+your terminal/command prompt and run the following command
 
 ```bash
 git clone https://github.com/AhsanAyaz/flutter_contacts_list.git
 ```
 
-Now, checkout the `feat/add-delete-contacts-start` branch by running the following command:
+Now, checkout the `feat/add-delete-contacts-start` branch by running the
+following command:
 
 ```bash
 git checkout feat/add-delete-contacts-start
 ```
 
-Great! Open the project in your favorite editor now. I mainly use [Android Studio](https://developer.android.com/studio) or [VSCode](https://code.visualstudio.com/) these days for Flutter.
+Great! Open the project in your favorite editor now. I mainly use
+[Android Studio](https://developer.android.com/studio) or
+[VSCode](https://code.visualstudio.com/) these days for Flutter.
 
-📲 Once you've opened the code, run the app on either Android or iOS simulator. For this example, I'm going to use Android.
-[Follow the instructions](https://flutter.dev/docs/get-started/test-drive) to run the app on your simulator based on your IDE/environment.
+📲 Once you've opened the code, run the app on either Android or iOS simulator.
+For this example, I'm going to use Android.
+[Follow the instructions](https://flutter.dev/docs/get-started/test-drive) to
+run the app on your simulator based on your IDE/environment.
 
-<hr/>
-
-<PromotionBanner title={'Would rather see a video tutorial? I got you covered 👌<br/>Watch it below 👇'}/>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qC90U1rdgHQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<hr/>
+<PromotionBanner title="Would rather see a video tutorial? I got you covered 👌<br/>Watch it below 👇"></PromotionBanner>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/qC90U1rdgHQ"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+<hr />
 
 ## Adding a Contact
-Let's add a floating button in our Flutter app that we'll use to add a new contact. To do so, update the `main.dart` file's `build()` method as follows:
+
+Let's add a floating button in our Flutter app that we'll use to add a new
+contact. To do so, update the `main.dart` file's `build()` method as follows:
 
 ```dart{12-18}
 @override
@@ -82,13 +104,17 @@ Widget build(BuildContext context) {
   );
 }
 ```
-With the above change in place, you should be able able to see the floating action
-button. And when you tap it, you should see the **Native** contact form opened as follows:
 
-<ImageWithBg src="/flutter-contacts-list/add-contact_1.gif" imageHeight={400}/>
+With the above change in place, you should be able able to see the floating
+action button. And when you tap it, you should see the **Native** contact form
+opened as follows:
 
-Although the above is great progress in just one step, we have an issue. If you look at the Flutter's terminal/logs, you'll notice that
-as soon as you close the contact form without entring anything, it throws a bunch of errors as follows:
+<ImageWithBg src="/flutter-contacts-list/add-contact_1.gif" imageHeight={400} />
+
+Although the above is great progress in just one step, we have an issue. If you
+look at the Flutter's terminal/logs, you'll notice that as soon as you close the
+contact form without entring anything, it throws a bunch of errors as follows:
+
 ```bash
 E/flutter (20582): [ERROR:flutter/lib/ui/ui_dart_state.cc(177)] Unhandled Exception: FormOperationException: FormOperationErrorCode.FORM_OPERATION_CANCELED
 E/flutter (20582): #0      ContactsService._handleFormOperation (package:contacts_service/contacts_service.dart:129:11)
@@ -103,9 +129,11 @@ E/flutter (20582):
 D/EGL_emulation(20582): eglCreateContext: 0xf104cfe0: maj 3 min 0 rcv 3
 ```
 
-Notice the error code `FormOperationErrorCode.FORM_OPERATION_CANCELED`. This is fired from the library in case
-the operation is cancelled by the user. There are few other errors as well to handle, and the appropriate way is to use
-a `try` `catch` around the `openContactForm()` method's usage. Update the `main.dart` as follows:
+Notice the error code `FormOperationErrorCode.FORM_OPERATION_CANCELED`. This is
+fired from the library in case the operation is cancelled by the user. There are
+few other errors as well to handle, and the appropriate way is to use a `try`
+`catch` around the `openContactForm()` method's usage. Update the `main.dart` as
+follows:
 
 ```dart{11-23}
 @override
@@ -137,17 +165,27 @@ Widget build(BuildContext context) {
 }
 ```
 
-With the above change, the errors should be gone now. 🙌 Hurray! However, what happens if we actually save a new contact?
-So far we have nothing in place for the scenario, and ideally, we should be reloading all the contacts as soon as we save a new contact.
+With the above change, the errors should be gone now. 🙌 Hurray! However, what
+happens if we actually save a new contact? So far we have nothing in place for
+the scenario, and ideally, we should be reloading all the contacts as soon as we
+save a new contact.
 
 > "Sorry what? Reloading all contacts? Why Ahsan?"
 
-<ImageWithBg imageHeight="250" src="https://media1.tenor.com/images/9fdf6ac1652c92984383ca5d6f392c9b/tenor.gif?itemid=11908780" backgroundColor="transparent"/>
+<ImageWithBg
+  imageHeight="250"
+  src="https://media1.tenor.com/images/9fdf6ac1652c92984383ca5d6f392c9b/tenor.gif?itemid=11908780"
+  backgroundColor="transparent"
+/>
 
-Glad you asked. The reason is the way the `ContactsService` fetches the contacts from the device. It fetches it sorted by the `givenName` property of each contact.
-Now if you added a contact and wanted to just push it to the list, where would you push it? To the top? Bottom? Or will you sort the entire contacts list?
+Glad you asked. The reason is the way the `ContactsService` fetches the contacts
+from the device. It fetches it sorted by the `givenName` property of each
+contact. Now if you added a contact and wanted to just push it to the list,
+where would you push it? To the top? Bottom? Or will you sort the entire
+contacts list?
 
-To avoid this complexity, it is just way easier to reload the contacts in this case. And to do so, modify the `main.dart` as folows:
+To avoid this complexity, it is just way easier to reload the contacts in this
+case. And to do so, modify the `main.dart` as folows:
 
 ```dart{13-16}
 @override
@@ -183,9 +221,11 @@ Widget build(BuildContext context) {
 ```
 
 ## Viewing a Contact
-To view a contact's details, we already have a widget as a page, called `ContactDetails`.
-The file's path is `lib/pages/contact-details.dart`. We need to navigate to this page/widget whenever
-the user taps any contact. To do so, modify the `lib/components/contacts-list.dart` as follows:
+
+To view a contact's details, we already have a widget as a page, called
+`ContactDetails`. The file's path is `lib/pages/contact-details.dart`. We need
+to navigate to this page/widget whenever the user taps any contact. To do so,
+modify the `lib/components/contacts-list.dart` as follows:
 
 ```dart{2,14-26}
 import 'package:contacts_app/app-contact.class.dart';
@@ -225,14 +265,18 @@ class ContactsList extends StatelessWidget {
 
 ```
 
-If you now try tapping on any of the list items on the home page, you should see it working as follows:
-<ImageWithBg src="/flutter-contacts-list/add-contact_2.gif" imageHeight={400}/>
+If you now try tapping on any of the list items on the home page, you should see
+it working as follows:
 
+<ImageWithBg src="/flutter-contacts-list/add-contact_2.gif" imageHeight={400} />
 
 ## Updating a Contact
-To update the contacts, we need to implement a `PopupMenuButton` widget inside the `ContactDetails` page widget.
-We'll create a list of actions ('Edit' and 'Delete') and will then create a `PopupMenuButton` with some `PopupMenuItem` widgets.
-Your code in the `lib/pages/contact-details.dart` file should look as follows:
+
+To update the contacts, we need to implement a `PopupMenuButton` widget inside
+the `ContactDetails` page widget. We'll create a list of actions ('Edit' and
+'Delete') and will then create a `PopupMenuButton` with some `PopupMenuItem`
+widgets. Your code in the `lib/pages/contact-details.dart` file should look as
+follows:
 
 ```dart{4-7,20-35}
 class _ContactDetailsState extends State<ContactDetails> {
@@ -282,13 +326,16 @@ class _ContactDetailsState extends State<ContactDetails> {
 }
 ```
 
-When you've implemented the code above, you should see the `PopupMenuButton` widget appear on the top right corner
-of the `ContactDetails` page as follows:
+When you've implemented the code above, you should see the `PopupMenuButton`
+widget appear on the top right corner of the `ContactDetails` page as follows:
 
-<ImageWithBg src="/flutter-contacts-list/popupmenu.png" imageHeight={400}/>
+<ImageWithBg src="/flutter-contacts-list/popupmenu.png" imageHeight={400} />
 
-Let's implement what happens if we press the `Edit` action. We want to be able to open an existing contact for editing. And when we have edited the contact, we need to reflect it on the `ContactDetails` page as well.
-For this, we'll create a method called `onAction` in our `ContactDetails` widget and pass it to the  Modify the `contact-details.dart` as follows:
+Let's implement what happens if we press the `Edit` action. We want to be able
+to open an existing contact for editing. And when we have edited the contact, we
+need to reflect it on the `ContactDetails` page as well. For this, we'll create
+a method called `onAction` in our `ContactDetails` widget and pass it to the
+Modify the `contact-details.dart` as follows:
 
 ```dart{3,12-35,54}
 import 'package:contacts_app/app-contact.class.dart';
@@ -367,25 +414,36 @@ class _ContactDetailsState extends State<ContactDetails> {
   }
 }
 ```
-If you try updating any contact now, you'll see that upon saving the contact, it instantly updates
-the `ContactDetails` widget to show the updated value as follows:
 
-<ImageWithBg src="/flutter-contacts-list/update-contact_1.gif" imageHeight={400}/>
+If you try updating any contact now, you'll see that upon saving the contact, it
+instantly updates the `ContactDetails` widget to show the updated value as
+follows:
+
+<ImageWithBg
+  src="/flutter-contacts-list/update-contact_1.gif"
+  imageHeight={400}
+/>
 
 ### Reloading contacts after update
 
-If we get back to the home (Contacts List) page after updating a contact at the moment, we don't see the updated contact's
-value there. We still see the old data.
-This is because we need to reload the contacts after updating or deleting a contact as well.
-To do this, we need to do the following:
+If we get back to the home (Contacts List) page after updating a contact at the
+moment, we don't see the updated contact's value there. We still see the old
+data. This is because we need to reload the contacts after updating or deleting
+a contact as well. To do this, we need to do the following:
 
-- Call the `onContactUpdate()` method from the `ContactDetails` widget after the contact has been updated.
-- From the `onContactUpdate` callback, we need to somehow reload all contacts (executing some callback in the `main.dart`).
-- In order to achieve the approach in step `2.`, we need to create an input method in the `ContactsList` widget named `reloadContacts()` that we can pass a callback from the `main.dart`.
+- Call the `onContactUpdate()` method from the `ContactDetails` widget after the
+  contact has been updated.
+- From the `onContactUpdate` callback, we need to somehow reload all contacts
+  (executing some callback in the `main.dart`).
+- In order to achieve the approach in step `2.`, we need to create an input
+  method in the `ContactsList` widget named `reloadContacts()` that we can pass
+  a callback from the `main.dart`.
 
 <hr />
 
-First, go to the `contact-details.dart` file and call the `onContactUpdate()` method as follows:
+First, go to the `contact-details.dart` file and call the `onContactUpdate()`
+method as follows:
+
 ```dart{16}
 ...
 class _ContactDetailsState extends State<ContactDetails> {
@@ -423,8 +481,10 @@ class _ContactDetailsState extends State<ContactDetails> {
 }
 ```
 
-Now let's modify the `ContactsList` widget to create the `reloadContacts()` callback's property, and
-call it in both the `onContactDelete` and `onContactUpdate` methods as follows:
+Now let's modify the `ContactsList` widget to create the `reloadContacts()`
+callback's property, and call it in both the `onContactDelete` and
+`onContactUpdate` methods as follows:
+
 ```dart{4,5,19,22}
 ...
 class ContactsList extends StatelessWidget {
@@ -461,7 +521,9 @@ class ContactsList extends StatelessWidget {
 }
 ```
 
-Finally, go to the `main.dart` and pass a callback as the `reloadContacts` property the `ContactsList` widget. And call the `getAllContacts` method from the callback as follows:
+Finally, go to the `main.dart` and pass a callback as the `reloadContacts`
+property the `ContactsList` widget. And call the `getAllContacts` method from
+the callback as follows:
 
 ```dart{19-21}
 ...
@@ -495,18 +557,23 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-Once you've completed all the above steps, you should see that when you update the contact,
-you immediately see the change in the `ContactDetails` page widget. As well as on the `ContactsList` widget as follows:
+Once you've completed all the above steps, you should see that when you update
+the contact, you immediately see the change in the `ContactDetails` page widget.
+As well as on the `ContactsList` widget as follows:
 
-<ImageWithBg src="/flutter-contacts-list/update-contact_2.gif" imageHeight={400}/>
-
+<ImageWithBg
+  src="/flutter-contacts-list/update-contact_2.gif"
+  imageHeight={400}
+/>
 
 ## Deleting a Contact
 
-Deleting data of any sort is no joke. We have to be sure that the user wants to delete the contact. We'll implement a confirmation dialog
-using the `AlertDialog` widget.
+Deleting data of any sort is no joke. We have to be sure that the user wants to
+delete the contact. We'll implement a confirmation dialog using the
+`AlertDialog` widget.
 
-Go to the `contact-details.dart` and create a new method named `showDeleteConfirmation()`. Your code should look as follows:
+Go to the `contact-details.dart` and create a new method named
+`showDeleteConfirmation()`. Your code should look as follows:
 
 ```dart{10-38,47}
 ...
@@ -566,15 +633,20 @@ class _ContactDetailsState extends State<ContactDetails> {
 
 ```
 
-After you've implemented the above code, you should see the `AlertDialog` when you tap the delete option, as follows:
+After you've implemented the above code, you should see the `AlertDialog` when
+you tap the delete option, as follows:
 
-<ImageWithBg src="/flutter-contacts-list/delete-contact.png" imageHeight={400}/>
+<ImageWithBg
+  src="/flutter-contacts-list/delete-contact.png"
+  imageHeight={400}
+/>
 
 Finally, we'd like to do the following on the tapping the `Delete` option:
 
 - Delete the contact using the `ContactService`'s `deleteContact()` method.
 - Dismiss the `AlertDialog` widget.
-- Navigate from the `ContactDetails` page back to the `ContactsList` (Home) page.
+- Navigate from the `ContactDetails` page back to the `ContactsList` (Home)
+  page.
 - Reload the contacts which should remove the deleted contacts from the list.
 
 <hr />
@@ -613,7 +685,9 @@ class _ContactDetailsState extends State<ContactDetails> {
 }
 ```
 
-Now, go to the `contacts-list.dart` and update it as follows to implement a `.pop()` inside the `onContactDelete()` callback:
+Now, go to the `contacts-list.dart` and update it as follows to implement a
+`.pop()` inside the `onContactDelete()` callback:
+
 ```dart{18}
 ...
 class ContactsList extends StatelessWidget {
@@ -649,13 +723,21 @@ class ContactsList extends StatelessWidget {
 }
 ```
 
-💥 Boom! Now if you delete a contact, you should see it working as a seamless and quick user experience.
-<ImageWithBg src="/flutter-contacts-list/delete-contact_final.gif" imageHeight={400}/>
+💥 Boom! Now if you delete a contact, you should see it working as a seamless
+and quick user experience.
+
+<ImageWithBg
+  src="/flutter-contacts-list/delete-contact_final.gif"
+  imageHeight={400}
+/>
 
 ## Conclusion
-[ContactsService](https://pub.dev/packages/contacts_service) is an amazing flutter package to work with. It makes it really easy to work with the Native Phone Contacts directory.
-This implementation was just a barebone of what's possible with the package and a bit of love 🖤. And I hope that you've learnt the most easiest ways of working with
-the native contacts within a Flutter app.
 
-You can always share what you build after the learnings from this article on my [Twitter](https://twitter.com/muhd_ahsanayaz)
+[ContactsService](https://pub.dev/packages/contacts_service) is an amazing
+flutter package to work with. It makes it really easy to work with the Native
+Phone Contacts directory. This implementation was just a barebone of what's
+possible with the package and a bit of love 🖤. And I hope that you've learnt
+the most easiest ways of working with the native contacts within a Flutter app.
 
+You can always share what you build after the learnings from this article on my
+[Twitter](https://twitter.com/muhd_ahsanayaz)
