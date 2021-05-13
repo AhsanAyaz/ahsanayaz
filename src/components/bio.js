@@ -11,6 +11,7 @@ import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
 import Socials from "./socials/socials"
+import BuyMeACoffee from "./BuyMeACoffee/BuyMeACoffee"
 
 const Bio = (showBMAC = false) => {
   const data = useStaticQuery(graphql`
@@ -73,15 +74,7 @@ const Bio = (showBMAC = false) => {
           </div>
           {showBMAC ? (
             <div>
-              <a
-                title="Like Ahsan's work? Buy him a coffee"
-                className="bmac"
-                target="_blank"
-                rel="noopener noreferer"
-                href="https://www.buymeacoffee.com/muhd.ahsanayaz"
-              >
-                <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=muhd.ahsanayaz&button_colour=BD5FFF&font_colour=ffffff&font_family=Comic&outline_colour=000000&coffee_colour=FFDD00" />
-              </a>
+              <BuyMeACoffee />
             </div>
           ) : null}
         </div>

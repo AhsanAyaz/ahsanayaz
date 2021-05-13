@@ -1,4 +1,5 @@
 import React from "react"
+import BuyMeACoffee from "../BuyMeACoffee/BuyMeACoffee"
 import "./Support.css"
 
 const Support = ({ size = 20 }) => {
@@ -47,15 +48,7 @@ const Support = ({ size = 20 }) => {
   return (
     <div className="support">
       <h2>Like my work?</h2>
-      <a
-        title="Like Ahsan's work? Buy him a coffee"
-        className="bmac"
-        target="_blank"
-        rel="noopener noreferer"
-        href="https://www.buymeacoffee.com/muhd.ahsanayaz"
-      >
-        <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=muhd.ahsanayaz&button_colour=BD5FFF&font_colour=ffffff&font_family=Comic&outline_colour=000000&coffee_colour=FFDD00" />
-      </a>
+      <BuyMeACoffee />
       <div>Or follow &amp; connect with me on my Socials:</div>
       <p className="support__socials">
         {socials.map(social => {
