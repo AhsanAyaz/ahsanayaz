@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "https://ahsanayaz.com/ng-book"
+  to = "https://www.amazon.com/Angular-Cookbook-recipes-enterprise-scale-development-ebook-dp-B08VTWYJ7H/dp/B08VTWYJ7H"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://ahsanayaz.com/youtube"
+  to = "https://youtube.com/c/AhsanAyaz"
+  status = 301
+  force = true
