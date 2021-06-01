@@ -9,3 +9,44 @@
   to = "https://youtube.com/c/AhsanAyaz"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://ahsanayaz.com/gde"
+  to = "https://developers.google.com/community/experts/directory/profile/profile-muhammad-ahsan-ayaz"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://ahsanayaz.com/instagram"
+  to = "https://instagram.com/muhd.ahsanayaz"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://ahsanayaz.com/facebook"
+  to = "https://facebook.com/muhd.ahsanayaz"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://ahsanayaz.com/tiktok"
+  to = "https://tiktok.com/@muhd.ahsanayaz"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://ahsanayaz.com/resume"
+  to = "https://linkedin.com/in/ahsanayaz"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://ahsanayaz.com/linkedin"
+  to = "https://linkedin.com/in/ahsanayaz"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://ahsanayaz.com/twitter"
+  to = "https://twitter.com/muhd_ahsanayaz"
+  status = 301
+  force = true
