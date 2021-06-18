@@ -12,6 +12,7 @@ const ImageWithBg = ({
   textColor = "black",
   id = null,
   noLink = false,
+  objectFit = "contain",
 }) => {
   let linkId = null
   if (id) {
@@ -37,6 +38,7 @@ const ImageWithBg = ({
           marginLeft: "auto",
           marginRight: "auto",
           height: imageHeight ? `${imageHeight}px` : "",
+          objectFit,
         }}
       />
       {caption ? (
