@@ -6,6 +6,9 @@ import Img from "gatsby-image"
 import Tags from "../tags/tags"
 import { TAG_SIZE } from "../../constants/tag-size"
 import "./BlogPostItem.css"
+
+const BLOG_POST_IMAGE_HEIGHT = 280
+
 const BlogPostItem = ({ post }) => {
   const title = post.frontmatter.title || post.fields.slug
   let featuredImgFluid = null
@@ -33,7 +36,14 @@ const BlogPostItem = ({ post }) => {
               <Img
                 alt={title}
                 fluid={featuredImgFluid}
-                style={{ marginBottom: rhythm(1 / 4) }}
+                imgStyle={{
+                  maxHeight: BLOG_POST_IMAGE_HEIGHT,
+                  objectFit: "contain",
+                }}
+                style={{
+                  marginBottom: rhythm(1 / 4),
+                  maxHeight: BLOG_POST_IMAGE_HEIGHT,
+                }}
               />
             </Link>
           </div>
@@ -52,7 +62,7 @@ const BlogPostItem = ({ post }) => {
             dangerouslySetInnerHTML={{
               __html:
                 (post.frontmatter.description || post.excerpt) +
-                `... <span style="color: #5d1ad5;">Read More</span>`,
+                `... <span class="read-more-link" style="color: #5d1ad5;">Read More</span>`,
             }}
           />
         </Link>

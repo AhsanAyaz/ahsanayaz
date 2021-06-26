@@ -10,6 +10,10 @@
   outline: none; /* prevents dotted line when link is active */
 }
 
+.read-more-link:hover {
+  opacity: 0.8;
+}
+
 .blog-header {
   margin-top: 3.5rem;
   margin-left: 0;

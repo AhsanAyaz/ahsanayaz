@@ -13,7 +13,7 @@ import { rhythm } from "../utils/typography"
 import Socials from "./socials/socials"
 import BuyMeACoffee from "./BuyMeACoffee/BuyMeACoffee"
 
-const Bio = (showBMAC = false) => {
+const Bio = ({ showBMAC = false, showSocials = false }) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile_pic.png/" }) {
@@ -35,6 +35,7 @@ const Bio = (showBMAC = false) => {
   `)
 
   const { author, social } = data.site.siteMetadata
+  const hasSecondarySection = showSocials || showBMAC
   return (
     <div
       className="bio"
@@ -68,16 +69,20 @@ const Bio = (showBMAC = false) => {
           <a href={social.gdeProfile}>Google Developers Expert</a> in Angular &
           Web Technologies.
         </div>
-        <div className="bio-secondary" style={{ marginTop: "10px" }}>
-          <div>
-            <Socials size={24} />
+        {hasSecondarySection ? (
+          <div className="bio-secondary" style={{ marginTop: "10px" }}>
+            {showSocials ? (
+              <div>
+                <Socials size={24} />
+              </div>
+            ) : null}
+            {showBMAC ? (
+              <div>
+                <BuyMeACoffee />
+              </div>
+            ) : null}
           </div>
-          {showBMAC ? (
-            <div>
-              <BuyMeACoffee />
-            </div>
-          ) : null}
-        </div>
+        ) : null}
       </div>
     </div>
   )

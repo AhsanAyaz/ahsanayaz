@@ -13,7 +13,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Muhammad Ahsan Ayaz - All Posts" />
       {posts.map(({ node: post }) => (
         <BlogPostItem post={post} key={post.fields.slug} />
       ))}
