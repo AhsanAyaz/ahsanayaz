@@ -40,10 +40,11 @@ body {
 
 a {
   box-shadow: none !important;
+  color: $primary;
 }
 
 a:hover {
-  color: #888;
+  opacity: 0.8;
 }
 
 :not(pre) > code {

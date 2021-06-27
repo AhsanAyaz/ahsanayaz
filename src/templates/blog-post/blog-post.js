@@ -13,6 +13,7 @@ import Tags from "../../components/tags/tags"
 import { TAG_SIZE } from "../../constants/tag-size"
 import shortCodes from "../../constants/short-codes"
 import Support from "../../components/Support/Support"
+import Comments from "../../components/Comments/Comments"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -72,6 +73,7 @@ class BlogPostTemplate extends React.Component {
             </MDXProvider>
           </main>
           <Support />
+          <Comments issueTerm={slug} />
           <hr
             style={{
               marginBottom: rhythm(1),
