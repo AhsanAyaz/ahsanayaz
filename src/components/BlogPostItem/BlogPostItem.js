@@ -16,6 +16,7 @@ const BlogPostItem = ({ post }) => {
     featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
   }
   const { tags } = post.frontmatter
+  const metaImage = `${post.fields.slug}seo.jpg`
   return (
     <article key={post.fields.slug}>
       <header>
@@ -29,10 +30,10 @@ const BlogPostItem = ({ post }) => {
             {title}
           </Link>
         </div>
-        {featuredImgFluid ? (
-          <div className="image-link">
-            <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
-              <span>{title}</span>
+        <div className="image-link">
+          <Link style={{ boxShadow: `none` }} to={post.fields.slug}>
+            <span>{title}</span>
+            {featuredImgFluid ? (
               <Img
                 alt={title}
                 fluid={featuredImgFluid}
@@ -45,9 +46,29 @@ const BlogPostItem = ({ post }) => {
                   maxHeight: BLOG_POST_IMAGE_HEIGHT,
                 }}
               />
-            </Link>
-          </div>
-        ) : null}
+            ) : (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <img
+                  alt={title}
+                  src={metaImage}
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                    maxHeight: BLOG_POST_IMAGE_HEIGHT,
+                    objectFit: "contain",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                  }}
+                />
+              </div>
+            )}
+          </Link>
+        </div>
+
         <small>{post.frontmatter.date}</small>
       </header>
       <section>
