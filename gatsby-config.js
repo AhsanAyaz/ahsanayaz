@@ -17,8 +17,7 @@ module.exports = {
       github: `ahsanayaz`,
       linkedin: `in/ahsanayaz`,
       youtube: "UCAys-Lg76QcRNGc0dOr_bXA",
-      gdeProfile:
-        "https://developers.google.com/community/experts/directory/profile/profile-muhammad_ahsan_ayaz",
+      gdeProfile: "https://ahsanayaz.com/gde",
     },
   },
   plugins: [
