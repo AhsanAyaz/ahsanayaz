@@ -50,3 +50,9 @@
   to = "https://twitter.com/muhd_ahsanayaz"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://ahsanayaz.com/author"
+  to = "https://www.amazon.com/~/e/B098TSDC9B"
+  status = 301
+  force = true
