@@ -64,8 +64,8 @@ const Bio = ({ showBMAC = false, showSocials = false }) => {
         }}
       >
         <div>
-          {author} is a Senior Software Engineer at{" "}
-          <a href="https://klarna.com">Klarna</a> and a{" "}
+          {author} is a Software Architect at{" "}
+          <a href="https://syncron.com">Syncron</a> and a{" "}
           <a href={social.gdeProfile}>Google Developers Expert</a> in Angular &
           Web Technologies.
         </div>
