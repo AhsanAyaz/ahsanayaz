@@ -75,9 +75,12 @@ const Socials = ({ size = 20 }) => {
     <div className="socials">
       {socials.map(social => (
         <div
+          role="button"
+          tabIndex="-1"
           key={social.link}
           className={social.class}
           onClick={() => openSocial(social)}
+          aria-hidden={true}
         >
           <social.component size={size} />
         </div>

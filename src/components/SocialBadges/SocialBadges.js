@@ -41,7 +41,7 @@ const SocialBadges = ({ size = 20, noHeading = false }) => {
     {
       link: `https://discord.gg/rEBSSh926k`,
       image:
-        "https://img.shields.io/discord/814191682282717194.svg?label=CodeZen&logo=Discord&colorB=7289da&style=for-the-badge",
+        "https://img.shields.io/discord/814191682282717194.svg?label=CodeWithAhsan&logo=Discord&colorB=7289da&style=for-the-badge",
     },
   ]
   return (
@@ -53,10 +53,10 @@ const SocialBadges = ({ size = 20, noHeading = false }) => {
             title={social.link}
             className="social-badges__social"
             target="_blank"
-            rel="noopener noreferer"
+            rel="noopener noreferrer"
             href={social.link}
           >
-            <img src={social.image} />
+            <img alt="social" src={social.image} />
           </a>
         )
       })}

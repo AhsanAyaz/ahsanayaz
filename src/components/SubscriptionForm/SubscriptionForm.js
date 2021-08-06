@@ -56,25 +56,33 @@ const SubscriptionForm = () => {
             Join the Newsletter
           </h4>
           <div className="mb-3 form-group">
-            <label className="form-label">First Name</label>
+            <label htmlFor="firstNameInput" className="form-label">
+              First Name
+            </label>
             <input
+              id="firstNameInput"
               type="text"
               defaultValue=""
               className="form-control"
               onChange={e => setFirstName(e.target.value)}
               placeholder="Your first name"
               required
+              name="firstname"
             />
           </div>
           <div className="mb-3 form-group">
-            <label className="form-label">Email</label>
+            <label htmlFor="emailInput" className="form-label">
+              Email
+            </label>
             <input
+              id="emailInput"
               type="email"
               defaultValue=""
               className="form-control"
               onChange={e => setEmail(e.target.value)}
               placeholder="Email address"
               required
+              name="email"
             />
           </div>
           <div className="mb-3">

@@ -12,7 +12,12 @@ const SocialsPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Muhammad Ahsan Ayaz - Socials" />
       <Bio />
-      <h4>Socials 👇</h4>
+      <h4>
+        Socials{" "}
+        <span role="img" aria-label="point down emoji">
+          👇
+        </span>
+      </h4>
       <SocialBadges />
     </Layout>
   )

@@ -28,7 +28,7 @@ const ImageWithBg = ({
         marginBottom: rhythm(1.5),
       }}
     >
-      {noLink == false && linkId !== null ? <div id={linkId} /> : null}
+      {noLink === false && linkId !== null ? <div id={linkId} /> : null}
       <img
         src={src}
         alt={alt}
