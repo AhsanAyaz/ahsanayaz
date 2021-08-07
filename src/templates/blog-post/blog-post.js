@@ -72,8 +72,8 @@ class BlogPostTemplate extends React.Component {
               <MDXRenderer>{post.body}</MDXRenderer>
             </MDXProvider>
           </main>
-          <Support />
           <Comments issueTerm={slug} />
+          <Support />
           <hr
             style={{
               marginBottom: rhythm(1),
