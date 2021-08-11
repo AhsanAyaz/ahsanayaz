@@ -24,4 +24,4 @@ Or follow & connect with me on my Socials:
 [![Instagram Profile](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://instagram.com/muhd.ahsanayaz)
 [![Facebook Profile](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://facebook.com/muhd.ahsanayaz)
 [![TikTok Profile](https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@muhd.ahsanayaz)
-[![CodeWithAhsan Discord](https://img.shields.io/discord/814191682282717194.svg?label=CodeZen&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/rEBSSh926k)
+[![CodeWithAhsan Discord](https://img.shields.io/discord/814191682282717194.svg?label=CodeWithAhsan&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/rEBSSh926k)
