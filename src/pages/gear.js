@@ -4,11 +4,15 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Bio from "../components/bio"
 import AmazonGearItems from "../components/AmazonGearItem/AmazonGearItems"
+import gearMeta from "../../static/images/gear.jpeg"
 const GearsPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Muhammad Ahsan Ayaz - Gear and Equipment" />
+      <SEO
+        title="Muhammad Ahsan Ayaz - Gear and Equipment"
+        metaImage={gearMeta}
+      />
       <Bio />
       <h4>
         Gear and Equipment{" "}
