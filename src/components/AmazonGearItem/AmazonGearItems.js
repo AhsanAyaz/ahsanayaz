@@ -10,6 +10,7 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="Audio Technica AT2020+ USB"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
@@ -24,6 +25,7 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="Blue Snowball Mic"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
@@ -38,6 +40,7 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="Sony a5100"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
@@ -52,6 +55,7 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="Elgato Key Light"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
@@ -66,6 +70,7 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="Sigma 16mm Lense"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
@@ -80,6 +85,7 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="Philips Hue Go"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
@@ -94,6 +100,7 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="Logitech G PRO X Gaming Headset"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
@@ -108,6 +115,7 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="ASUS TUF Gaming 27 inch 2K HDR Curved Monitor (VG27WQ1B)"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
@@ -122,6 +130,7 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="SAMSUNG 27-Inch CRG5 240Hz Curved Gaming Monitor (LC27RG50FQNXZA)"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
@@ -136,6 +145,7 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="Logitech G Pro Wireless Gaming Mouse"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
@@ -150,11 +160,27 @@ const AmazonGearItems = () => {
             width: 120,
             height: 240,
           }}
+          title="Corsair K70 RGB MK.2 Mechanical Gaming Keyboard"
           marginWidth={0}
           marginHeight={0}
           scrolling="no"
           frameBorder={0}
           src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=ahsanayaz-20&marketplace=amazon&amp;region=US&placement=B07D5S54C6&asins=B07D5S54C6&linkId=4969139349a2c83f6fd42103f0b68c1e&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=5d1ad5&bg_color=ffffff"
+        ></iframe>
+      </div>
+      {/* Elgato Game Capture HD60 S+ */}
+      <div className="gear__item">
+        <iframe
+          style={{
+            width: 120,
+            height: 240,
+          }}
+          title="Elgato Game Capture HD60 S+"
+          marginWidth={0}
+          marginHeight={0}
+          scrolling="no"
+          frameBorder={0}
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=ahsanayaz-20&marketplace=amazon&amp;region=US&placement=B07XB6VNLJ&asins=B07XB6VNLJ&linkId=263dfef1dd0d906e35e26b3e18695b4a&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=5d1ad5&bg_color=ffffff"
         ></iframe>
       </div>
     </div>
