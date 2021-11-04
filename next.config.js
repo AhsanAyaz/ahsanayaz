@@ -2,6 +2,39 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
+const existingBlogs = [
+  'announcing-angular-cookbook',
+  'adding-comments-to-your-gatsbyjs-blog',
+  'tech-karo-first-meetup-2021',
+  'angular-unit-tests-constructor-not-compatible-with-angular-dependency-injection',
+  'the-most-easy-way-to-add-update-and-delete-contacts-in-flutter',
+  'i-cant-belive-udemy-published-my-ionic-video-course',
+  'extend-angular-built-in-pipes',
+  'understanding-discriminated-unions-in-typescript',
+  {
+    source: 'flutter-marketplace-app-with-stripe-connect-part-2',
+    destination: 'flutter-marketplace-app-with-stripe/part-2',
+  },
+  {
+    source: 'flutter-marketplace-app-with-stripe-connect-part-1',
+    destination: 'flutter-marketplace-app-with-stripe/part-1',
+  },
+]
+
+const existingPostsRedirect = existingBlogs.map((post) => {
+  return typeof post === 'string'
+    ? {
+        source: `/${post}`,
+        destination: `/blog/${post}`,
+        permanent: true,
+      }
+    : {
+        source: `/${post.source}`,
+        destination: `/blog/${post.destination}`,
+        permanent: true,
+      }
+})
+
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
@@ -13,6 +46,7 @@ module.exports = withBundleAnalyzer({
   },
   async redirects() {
     return [
+      ...existingPostsRedirect,
       {
         source: '/ng-book',
         destination:
