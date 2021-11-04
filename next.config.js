@@ -2,13 +2,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-const existingBlogs = [
-  'announcing-angular-cookbook',
+const cwaBlogArticles = [
   'adding-comments-to-your-gatsbyjs-blog',
   'tech-karo-first-meetup-2021',
   'angular-unit-tests-constructor-not-compatible-with-angular-dependency-injection',
   'the-most-easy-way-to-add-update-and-delete-contacts-in-flutter',
-  'i-cant-belive-udemy-published-my-ionic-video-course',
   'extend-angular-built-in-pipes',
   'understanding-discriminated-unions-in-typescript',
   {
@@ -21,17 +19,32 @@ const existingBlogs = [
   },
 ]
 
-const existingPostsRedirect = existingBlogs.map((post) => {
+const localRedirects = [
+  {
+    source: `/announcing-angular-cookbook`,
+    destination: `/blog/announcing-angular-cookbook`,
+    permanent: true,
+  },
+  {
+    source: `/i-cant-belive-udemy-published-my-ionic-video-course`,
+    destination: `/blog/i-cant-belive-udemy-published-my-ionic-video-course`,
+    permanent: true,
+  },
+]
+
+const cwaBlogRedirects = cwaBlogArticles.map((post) => {
   return typeof post === 'string'
     ? {
         source: `/${post}`,
-        destination: `/blog/${post}`,
+        destination: `https://codewithahsan.org/blog/${post}`,
         permanent: true,
+        basePath: false,
       }
     : {
         source: `/${post.source}`,
-        destination: `/blog/${post.destination}`,
+        destination: `https://codewithahsan.org/blog/${post.destination}`,
         permanent: true,
+        basePath: false,
       }
 })
 
@@ -46,7 +59,8 @@ module.exports = withBundleAnalyzer({
   },
   async redirects() {
     return [
-      ...existingPostsRedirect,
+      ...localRedirects,
+      ...cwaBlogRedirects,
       {
         source: '/ng-book',
         destination:
