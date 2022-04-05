@@ -83,19 +83,19 @@ module.exports = withBundleAnalyzer({
       },
       {
         source: '/instagram',
-        destination: 'https://instagram.com/muhd.ahsanayaz',
+        destination: 'https://instagram.com/codewithahsan',
         permanent: true,
         basePath: false,
       },
       {
         source: '/facebook',
-        destination: 'https://facebook.com/muhd.ahsanayaz',
+        destination: 'https://facebook.com/codewithahsan',
         permanent: true,
         basePath: false,
       },
       {
         source: '/tiktok',
-        destination: 'https://tiktok.com/@muhd.ahsanayaz',
+        destination: 'https://tiktok.com/@code.with.ahsan',
         permanent: true,
         basePath: false,
       },
@@ -113,7 +113,7 @@ module.exports = withBundleAnalyzer({
       },
       {
         source: '/twitter',
-        destination: 'https://twitter.com/muhd_ahsanayaz',
+        destination: 'https://twitter.com/codewith_ahsan',
         permanent: true,
         basePath: false,
       },
