@@ -18,19 +18,19 @@
 
 [[redirects]]
   from = "https://ahsanayaz.com/instagram"
-  to = "https://instagram.com/muhd.ahsanayaz"
+  to = "https://instagram.com/codewithahsan"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://ahsanayaz.com/facebook"
-  to = "https://facebook.com/muhd.ahsanayaz"
+  to = "https://facebook.com/codewithahsan"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://ahsanayaz.com/tiktok"
-  to = "https://tiktok.com/@muhd.ahsanayaz"
+  to = "https://tiktok.com/@code.with.ahsan"
   status = 301
   force = true
 
@@ -47,7 +47,7 @@
   force = true
 [[redirects]]
   from = "https://ahsanayaz.com/twitter"
-  to = "https://twitter.com/muhd_ahsanayaz"
+  to = "https://twitter.com/codewith_ahsan"
   status = 301
   force = true
 
