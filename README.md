@@ -2,7 +2,7 @@
  <hr></hr>
 <div style="text-align: center">
   <div>
-    I'm a Software Architect & a Head Instructor - JavaScript working at <a href="https://salt.study">School of Applied Technology</a> and a <a href="https://ahsanayaz.com/gde">Google Developers Expert in Angular</a>. I create video tutorials on <a href="https://ahsanayaz.com/youtube">YouTube</a> and write articles at my blog <a href="https://ahsanayaz.com">https://ahsanayaz.com</a>. 
+    I'm a Software Architect & a Head Instructor - JavaScript working at <a href="https://salt.study">School of Applied Technology</a> and a <a href="https://codewithahsan.dev/gde">Google Developers Expert in Angular</a>. I create video tutorials on <a href="https://codewithahsan.dev/youtube">YouTube</a> and write articles at my blog <a href="https://codewithahsan.dev/blog">[https://ahsanayaz.com](https://codewithahsan.dev/blog)</a>. 
   </div>
 </div>
 
@@ -11,8 +11,8 @@
 <a
   title="Like Ahsan's work? Buy him a coffee"
   class="bmac"
-  href="https://www.buymeacoffee.com/muhd.ahsanayaz">
-<img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=muhd.ahsanayaz&button_colour=BD5FFF&font_colour=ffffff&font_family=Comic&outline_colour=000000&coffee_colour=FFDD00" />
+  href="https://www.buymeacoffee.com/codewithahsan">
+<img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=codewithahsan&button_colour=BD5FFF&font_colour=ffffff&font_family=Comic&outline_colour=000000&coffee_colour=FFDD00" />
 </a>
 
 Or follow & connect with me on my Socials:
