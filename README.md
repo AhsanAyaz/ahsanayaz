@@ -25,3 +25,4 @@ Or follow & connect with me on my Socials:
 [![Facebook Profile](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/codewithahsan)
 [![TikTok Profile](https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@codewithahsan)
 [![CodeWithAhsan Discord](https://img.shields.io/discord/814191682282717194.svg?label=CodeWithAhsan&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.com/invite/KSPpuxD8SG)
+[![](https://visitcount.itsvg.in/api?id=ahsanayaz&label=Profile%20Views&color=6&icon=0&pretty=false)](https://visitcount.itsvg.in)
